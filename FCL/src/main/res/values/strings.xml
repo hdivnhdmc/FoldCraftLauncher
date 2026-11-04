@@ -55,11 +55,11 @@
     <string name="plugin_miolibpatcher_asm">ثغرة ASM</string>
     <string name="plugin_miolibpatcher_asm_desc">يزيل فحص واجهة برمجة تطبيقات ASM 5.0.4 لدعم المودات القديمة مثل AE1 (يؤثر على جميع مودات ASM 5.0.4، استخدمه بحذر)</string>
     <string name="plugin_env_config">تكوين</string>
-    <string name="about_launcher" translatable="false">FXL Craft Launcher</string>
-    <string name="about_developer" translatable="false">FCL-Team</string>
+    <string name="about_launcher" translatable="false">FXL Launcher</string>
+    <string name="about_developer" translatable="false">Fxl-Team</string>
     <string name="about_sponsor">الداعمون</string>
     <string name="about_source">المصدر المفتوح</string>
-    <string name="about_desc">مشغل FXL Craft Launcher هو مشغل ماين كرافت لأجهزة أندرويد، يتيح للمستخدمين تشغيل Minecraft: Java Edition على أجهزة الأندرويد.\n\nتم تطوير المشغل بواسطة FCL-Team.\n\nمعظم ميزات المشغل معدلة بناءً على HMCLCore.\n\nيستعير التطبيق ويقتبس بعض الأكواد من PojavLauncher و Boat، لذا إذا كنت تنوي إعادة توزيع هذا التطبيق، يرجى الالتزام برخصة GPL-v3.</string>
+    <string name="about_desc">مشغل FXL Launcher هو مشغل ماين كرافت لأجهزة أندرويد، يتيح للمستخدمين تشغيل Minecraft: Java Edition على أجهزة الأندرويد.\n\nتم تطوير المشغل بواسطة Fxl-Team.\n\nمعظم ميزات المشغل معدلة بناءً على HMCLCore.\n\nيستعير التطبيق ويقتبس بعض الأكواد من PojavLauncher و Boat، لذا إذا كنت تنوي إعادة توزيع هذا التطبيق، يرجى الالتزام برخصة GPL-v3.</string>
 
     <string name="account_add_server">إضافة خادم مصادقة</string>
     <string name="account_add_server_url">رابط الخادم (URL)</string>
@@ -600,7 +600,7 @@
     <string name="launch_error_java_auto">تحديد تلقائي</string>
     <string name="launch_error_java_continue">متابعة</string>
     <string name="launch_error_java_continue_disable">متابعة (تعطيل الفحوصات)</string>
-    <string name="launch_failed">تعذر الإطلاق</string>
+    <string name="launch_failed">تعذر العب</string>
     <string name="launch_failed_download_library">تعذر تنزيل المكتبة %s.</string>
 
     <string name="launch_state_version">جاري تحليل الإصدار</string>
@@ -1184,7 +1184,7 @@
     <string name="settings_launcher_mod_cache_cleared">تم مسح ذاكرة المودات المؤقتة</string>
     <string name="settings_launcher_language">اللغة</string>
     <string name="settings_launcher_language_desc">تبديل لغة واجهة المشغل. تتطلب بعض اللغات إعادة تشغيل.</string>
-    <string name="settings_launcher_language_system">استخدام لغة النظام</string>
+    <string name="settings_launcher_language_system">استخدام لغة (العربية) النظام</string>
     <string name="settings_launcher_language_english" translatable="false">English</string>
     <string name="settings_launcher_language_simplified_chinese" translatable="false">简体中文</string>
     <string name="settings_launcher_language_russian" translatable="false">Русский язык</string>
@@ -1656,7 +1656,7 @@
     <string name="file_browser_no_selection">لم يتم اختيار أي ملف.</string>
     <string name="file_browser_operation_failed">فشلت العملية.</string>
     <string name="crash_reporter_title">تقرير الانهيار</string>
-    <string name="crash_reporter_hint">واجه مشغل FXL Craft Launcher خطأ غير قابل للاسترداد، يرجى طلب المساعدة من المطور.</string>
+    <string name="crash_reporter_hint">واجه مشغل FXL Launcher خطأ غير قابل للاسترداد، يرجى طلب المساعدة من المطور.</string>
     <string name="crash_reporter_restart">إعادة التشغيل</string>
     <string name="crash_reporter_close">خروج</string>
     <string name="crash_reporter_copy">نسخ</string>
