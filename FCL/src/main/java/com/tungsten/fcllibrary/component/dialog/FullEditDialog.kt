@@ -5,7 +5,7 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import com.tungsten.fcllibrary.component.view.FCLEditText
-import com.tungsten.fcl.databinding.DialogFullEditBinding
+import com.tungsten.fxl.databinding.DialogFullEditBinding // تم تصحيح الحزمة هنا لتتطابق مع namespace المشروع
 import com.tungsten.fcllibrary.util.ConvertUtils
 import java.util.function.Consumer
 
