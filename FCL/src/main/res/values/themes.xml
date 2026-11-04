@@ -16,6 +16,9 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+        
+        <!-- إضافة التدرج اللوني كخلفية عامة لكل نوافذ التطبيق -->
+        <item name="android:windowBackground">@drawable/bg_custom_gradient</item>
     </style>
 
     <style name="Theme.Splash" parent="@style/Theme.SplashScreen">
