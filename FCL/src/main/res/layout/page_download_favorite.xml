@@ -7,6 +7,7 @@
     android:paddingTop="10dp"
     android:paddingEnd="10dp">
 
+    <!-- 左侧筛选面板 -->
     <ScrollView
         android:id="@+id/filter_panel"
         android:layout_width="0dp"
@@ -17,6 +18,7 @@
         app:layout_constraintBottom_toTopOf="@id/btn_download_all"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintWidth_percent="0.3">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -28,7 +30,8 @@
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:text="@string/mods_category"
                 app:auto_text_tint="true" />
 
@@ -50,7 +53,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:text="@string/favorite_group"
                     app:auto_text_tint="true" />
 
@@ -80,7 +84,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:singleLine="true"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:text="@string/favorite_download_all"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +126,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:text="@string/favorite_empty_title"
             android:textSize="16sp"
             app:use_theme_color="true" />
