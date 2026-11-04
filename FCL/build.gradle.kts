@@ -1,4 +1,4 @@
-Import com.android.build.api.variant.FilterConfiguration.FilterType.ABI
+import com.android.build.api.variant.FilterConfiguration.FilterType.ABI
 import com.android.build.gradle.tasks.MergeSourceSetFolders
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.text.SimpleDateFormat
@@ -14,13 +14,10 @@ plugins {
 }
 
 checkstyle {
-    // 规则集 config/checkstyle/checkstyle.xml 与 Android Studio 默认格式对齐，仅检查 Java 代码
     toolVersion = "10.12.5"
     configFile = rootProject.file("config/checkstyle/checkstyle.xml")
 }
 
-// AGP 不提供 Java 插件的 SourceSetContainer，checkstyle 插件不会自动创建任务，
-// 因此手动注册 checkstyle 任务，检查范围为主源码目录的 Java 文件
 tasks.register<Checkstyle>("checkstyle") {
     description = "Run checkstyle on the FXL Java sources."
     group = "verification"
@@ -40,10 +37,11 @@ android {
         localProperty = Properties()
         file("${rootDir}/local.properties").inputStream().use { localProperty.load(it) }
     }
+
     val pwd = System.getenv("FCL_KEYSTORE_PASSWORD") ?: localProperty?.getProperty("pwd")
     val curseApiKey = System.getenv("CURSE_API_KEY") ?: localProperty?.getProperty("curse.api.key")
     val oauthApiKey = System.getenv("OAUTH_API_KEY") ?: localProperty?.getProperty("oauth.api.key")
-    // 命令行 -Darch 优先；local.properties 仅在命令行未指定时生效
+
     if (System.getProperty("arch") == null && localProperty != null && localProperty.getProperty(
             "arch",
             "all"
@@ -58,13 +56,14 @@ android {
             keyAlias = "FXL-Key"
             keyPassword = pwd
         }
+
         create("FCLDebugKey") {
             storeFile = file("../debug-key.jks")
             storePassword = "FXL-Debug"
             keyAlias = "FXL-Debug"
             keyPassword = "FXL-Debug"
         }
-        // minSdk 26 ≥ 24，v1 已无必要，统一启用 v2 + v3 签名方案
+
         configureEach {
             enableV1Signing = false
             enableV2Signing = true
@@ -79,6 +78,7 @@ android {
         versionCode = 1344
         versionName = "1.3.4.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
         externalNativeBuild {
             cmake {
                 arguments("-DANDROID_STL=c++_shared")
@@ -93,17 +93,19 @@ android {
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("FCLKey")
         }
+
         getByName("debug") {
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("FCLKey")
         }
+
         create("fordebug") {
             initWith(getByName("debug"))
             applicationIdSuffix = ".debug"
             signingConfig = signingConfigs.getByName("FCLDebugKey")
-            // 与 FileProvider authority（${applicationId}.provider）保持一致
             resValue("string", "file_browser_provider", "com.tungsten.fxl.debug.provider")
         }
+
         configureEach {
             resValue("string", "app_version", defaultConfig.versionName.toString())
             resValue("string", "curse_api_key", curseApiKey.toString())
@@ -166,6 +168,7 @@ val filterJreAssets = tasks.register<FilterJreAssets>("filterJreAssets") {
     inputs.property("arch", arch)
     from(layout.projectDirectory.dir("src/main/jreAssets"))
     into(outputDir)
+
     if (arch != "all") {
         exclude { it.name.startsWith("bin-") && it.name != "bin-$arch.tar.xz" }
     }
@@ -189,14 +192,18 @@ androidComponents {
         }
 
         val variantName = variant.name.replaceFirstChar { it.uppercaseChar() }
+
         afterEvaluate {
             val mergeAssets =
                 tasks.named("merge${variantName}Assets", MergeSourceSetFolders::class.java)
+
             val arch = System.getProperty("arch", "all")
             mergeAssets.configure { inputs.property("lwjglArch", arch) }
+
             mergeAssets.configure {
                 doLast {
                     if (arch == "all") return@doLast
+
                     val abi = when (arch) {
                         "arm" -> "armeabi-v7a"
                         "arm64" -> "arm64-v8a"
@@ -204,14 +211,21 @@ androidComponents {
                         "x86_64" -> "x86_64"
                         else -> return@doLast
                     }
+
                     val assetsDir = outputDir.get().asFile
+
                     val lwjglVersions = project.file("libs").listFiles { f ->
                         f.name.matches(Regex("lwjgl-\\d+\\.\\d+\\.\\d+-natives-release\\.aar"))
                     }
-                        ?.map { Regex("lwjgl-(\\d+\\.\\d+\\.\\d+)-natives-release\\.aar").find(it.name)!!.groupValues[1] }
+                        ?.map {
+                            Regex("lwjgl-(\\d+\\.\\d+\\.\\d+)-natives-release\\.aar")
+                                .find(it.name)!!.groupValues[1]
+                        }
                         ?: emptyList()
+
                     lwjglVersions.forEach { version ->
                         val nativesDir = File(assetsDir, "app_runtime/lwjgl/$version/natives")
+
                         if (nativesDir.isDirectory) {
                             nativesDir.listFiles()?.forEach { dir ->
                                 if (dir.isDirectory && dir.name != abi) {
@@ -221,8 +235,10 @@ androidComponents {
                             }
                         }
                     }
+
                     File(assetsDir, "app_runtime/jna").listFiles()?.forEach { versionDir ->
                         val nativesDir = File(versionDir, "natives")
+
                         if (nativesDir.isDirectory) {
                             nativesDir.listFiles()?.forEach { dir ->
                                 if (dir.isDirectory && dir.name != abi) {
@@ -277,7 +293,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.recyclerview)
-    implementation, libs.coroutines.android
+    implementation(libs.coroutines.android)
     implementation(libs.glide)
     implementation(libs.touchcontroller)
     implementation(libs.palette.ktx)
@@ -298,6 +314,7 @@ tasks.register("updateMap") {
     doLast {
         val list = mutableListOf<String>()
         val mapFile = file("${rootDir}/version_map.json")
+
         mapFile.forEachLine {
             list.add(
                 when {
@@ -325,6 +342,7 @@ tasks.register("updateMap") {
                 }
             )
         }
+
         mapFile.writeText(list.joinToString("\n"), Charsets.UTF_8)
     }
 }
