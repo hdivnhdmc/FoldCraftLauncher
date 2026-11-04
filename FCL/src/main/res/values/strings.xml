@@ -27,7 +27,7 @@
     <string name="splash_runtime_jna" translatable="false">JNA</string>
     <string name="splash_runtime_install">تثبيت / تحديث</string>
     <string name="splash_runtime_patching">جاري تحسين بيئة التشغيل…</string>
-    <string name="missing_runtime_arch_files">المشغل المثبت حالياً يفتقر إلى ملفات بيئة التشغيل المطلوبة لمعمارية جهازك (%s). يرجى تنزيل حزمة التثبيت الخاصة بمعماريتك (%s) أو حزمة التثبيت العامة الشاملة (%s).</string>
+    <string name="missing_runtime_arch_files" formatted="false">المشغل المثبت حالياً يفتقر إلى ملفات بيئة التشغيل المطلوبة لمعمارية جهازك (%s). يرجى تنزيل حزمة التثبيت الخاصة بمعماريتك (%s) أو حزمة التثبيت العامة الشاملة (%s).</string>
 
     <string name="account">الحساب</string>
     <string name="version">الإصدار</string>
@@ -149,7 +149,7 @@
     <string name="action_upload">رفع السجل (Log)</string>
     <string name="action_skip">تخطٍّ</string>
 
-    <string name="announcement">إعلان: %s</string>
+    <string name="announcement" formatted="false">إعلان: %s</string>
     <string name="announcement_significant">هذا الإعلان مهم جداً. يرجى التأكد من قراءته قبل إخفائه. هل تريد متابعة الإخفاء؟</string>
 
     <string name="archive_author">المؤلف (المؤلفون)</string>
@@ -211,8 +211,8 @@
     <string name="control_edit">تعديل وحدة التحكم</string>
     <string name="control_import">استيراد وحدة التحكم</string>
     <string name="control_import_failed">فشل استيراد وحدة التحكم!</string>
-    <string name="control_upgrade">وحدة التحكم (%s) قديمة، قد تنتج عنها بعض الأخطاء، هل تريد ترحيلها إلى الإصدار الجديد؟</string>
-    <string name="control_incompatible">وحدة التحكم (%s) غير متوافقة، قد يكون ذلك بسبب انخفاض إصدار المشغل أو وحدة التحكم.</string>
+    <string name="control_upgrade" formatted="false">وحدة التحكم (%s) قديمة، قد تنتج عنها بعض الأخطاء، هل تريد ترحيلها إلى الإصدار الجديد؟</string>
+    <string name="control_incompatible" formatted="false">وحدة التحكم (%s) غير متوافقة، قد يكون ذلك بسبب انخفاض إصدار المشغل أو وحدة التحكم.</string>
     <string name="control_upload_requirement">يرجى الانضمام إلى مجموعة QQ أولاً، ثم النقر على "مشاركة" لإرسال وحدة التحكم ومعلوماتها للمشرف والمراجعة.</string>
     <string name="control_info_author">المؤلف: </string>
     <string name="control_info_icon">الأيقونة: </string>
@@ -373,8 +373,8 @@
     <string name="datapack_add">تثبيت حزمة بيانات (Datapack)</string>
     <string name="datapack_choose_datapack">اختر حزمة بيانات للاستيراد</string>
 
-    <string name="download_code_404">الملف غير موجود على الخادم البعيد: %s</string>
-    <string name="download_failed">فشل تنزيل %1$s، رمز الاستجابة: %2$d</string>
+    <string name="download_code_404" formatted="false">الملف غير موجود على الخادم البعيد: %s</string>
+    <string name="download_failed" formatted="false">فشل تنزيل %1$s، رمز الاستجابة: %2$d</string>
     <string name="download_failed_empty">لا توجد إصدارات متاحة</string>
     <string name="download_failed_refresh">تعذر جلب قائمة الإصدارات. يرجى إعادة المحاولة.</string>
 
@@ -445,7 +445,7 @@
     <string name="edit_direction_event_sneak">انقر نقراً مزدوجاً على المركز للتسلل (Sneak)</string>
     <string name="edit_direction_event_sneak_code">رمز مفتاح التسلل</string>
 
-    <string name="exception_access_denied">تعذر الوصول إلى الملف %s.</string>
+    <string name="exception_access_denied" formatted="false">تعذر الوصول إلى الملف %s.</string>
     <string name="exception_artifact_malformed">لا يمكن التحقق من سلامة الملفات التي تم تنزيلها.</string>
     <string name="exception_ssl_handshake">تعذر إنشاء اتصال SSL بسبب نقص شهادات SSL في تثبيت Java الحالي.</string>
 
@@ -458,8 +458,8 @@
     <string name="log_too_large">ملف السجل كبير جداً</string>
     <string name="upload_fcl_log">رفع سجل FXL</string>
     <string name="upload_game_log">رفع سجل اللعبة</string>
-    <string name="upload_success">تم الرفع بنجاح! تم نسخ الرابط إلى الحافظة: %s</string>
-    <string name="upload_failed">فشل الرفع: %s</string>
+    <string name="upload_success" formatted="false">تم الرفع بنجاح! تم نسخ الرابط إلى الحافظة: %s</string>
+    <string name="upload_failed" formatted="false">فشل الرفع: %s</string>
     <string name="folder_mod">استعراض المودات (Mods)</string>
     <string name="folder_resourcepacks">استعراض حزم الموارد (Resource Packs)</string>
     <string name="folder_saves">استعراض عوالم الحفظ (Saves)</string>
@@ -469,15 +469,15 @@
     <string name="game_crash_info">معلومات الانهيار (Crash)</string>
     <string name="game_crash_reason">سبب الانهيار</string>
     <string name="game_crash_reason_multiple">تم اكتشاف أسباب متعددة:\n\n</string>
-    <string name="game_crash_reason_block">تعطلت اللعبة بسبب بلوك معين.\n\nيمكنك محاولة إزالة هذا البلوك باستخدام MCEdit أو حذف المود المسؤول عنه.\n\nنوع البلوك: %1$s\nالموقع: %2$s</string>
-    <string name="game_crash_reason_bootstrap_failed">تعطلت اللعبة بسبب المود %1$s.\n\nيمكنك محاولة حذفه أو تحديثه.</string>
-    <string name="game_crash_reason_config">تعطلت اللعبة لأن المود %1$s غير قادر على تحليل ملف التكوين الخاص به %2$s.</string>
+    <string name="game_crash_reason_block" formatted="false">تعطلت اللعبة بسبب بلوك معين.\n\nيمكنك محاولة إزالة هذا البلوك باستخدام MCEdit أو حذف المود المسؤول عنه.\n\nنوع البلوك: %1$s\nالموقع: %2$s</string>
+    <string name="game_crash_reason_bootstrap_failed" formatted="false">تعطلت اللعبة بسبب المود %1$s.\n\nيمكنك محاولة حذفه أو تحديثه.</string>
+    <string name="game_crash_reason_config" formatted="false">تعطلت اللعبة لأن المود %1$s غير قادر على تحليل ملف التكوين الخاص به %2$s.</string>
     <string name="game_crash_reason_debug_crash">تعطلت اللعبة لأنك قمت بتشغيل الانهيار يدوياً.\n\nلذا، فأنت غالباً تعرف السبب.</string>
-    <string name="game_crash_reason_duplicated_mod">لا يمكن تشغيل اللعبة بسبب وجود مودات مكررة: %1$s.\n\n%2$s\n\nيمكن تثبيت كل مود مرة واحدة فقط، يرجى حذف المود المكرر والمحاولة مرة أخرى.</string>
-    <string name="game_crash_reason_entity">تعطلت اللعبة بسبب كيان (Entity) معين.\n\nيمكنك محاولة إزالة هذا الكيان أو حذف المود المسؤول عنه.\n\nنوع الكيان: %1$s\nالموقع: %2$s</string>
+    <string name="game_crash_reason_duplicated_mod" formatted="false">لا يمكن تشغيل اللعبة بسبب وجود مودات مكررة: %1$s.\n\n%2$s\n\nيمكن تثبيت كل مود مرة واحدة فقط، يرجى حذف المود المكرر والمحاولة مرة أخرى.</string>
+    <string name="game_crash_reason_entity" formatted="false">تعطلت اللعبة بسبب كيان (Entity) معين.\n\nيمكنك محاولة إزالة هذا الكيان أو حذف المود المسؤول عنه.\n\nنوع الكيان: %1$s\nالموقع: %2$s</string>
     <string name="game_crash_reason_modmixin_failure">لا يمكن للعبة الاستمرار في التشغيل لأن عملية حقن أحد المودات (Mixin) فشلت.\nهذا يعني عادةً أن المود يحتوي على خطأ أو غير متوافق مع البيئة الحالية.</string>
     <string name="game_crash_reason_mod_repeat_installation">نظراً لتثبيت مودات متطابقة عدة مرات، يجب أن يظهر كل مود مرة واحدة فقط. يرجى حذف المودات المكررة وإعادة تشغيل اللعبة.</string>
-    <string name="game_crash_reason_forge_error">قد يكون Forge قد قدم معلومات عن الخطأ.\nيمكنك عرض السجل واتخاذ الإجراء المناسب.\n%1$s</string>
+    <string name="game_crash_reason_forge_error" formatted="false">قد يكون Forge قد قدم معلومات عن الخطأ.\nيمكنك عرض السجل واتخاذ الإجراء المناسب.\n%1$s</string>
     <string name="game_crash_reason_mod_resolution0">تعذر الاستمرار في التشغيل بسبب مشاكل في بعض المودات.</string>
     <string name="game_crash_reason_mod_profile_causes_game_crash">تعذر الاستمرار في التشغيل بسبب مشكلة في ملف تكوين المود.</string>
     <string name="game_crash_reason_fabric_reports_an_error_and_gives_a_solution">أبلغ برنامج Fabric عن خطأ. يرجى مراجعة تفاصيل السجل.</string>
@@ -485,11 +485,11 @@
     <string name="game_crash_reason_mod_name">تعذر تشغيل اللعبة بسبب مشاكل في أسماء ملفات المودات.\nيجب أن تستخدم أسماء المودات أحرف إنجليزية وأرقام وعلامات (−) و(_) والنقاط (.) فقط.</string>
     <string name="game_crash_reason_incomplete_forge_installation">تعذر الاستمرار بسبب عدم اكتمال تثبيت Forge.\nيرجى إلغاء تثبيت وإعادة تثبيت Forge.</string>
     <string name="game_crash_reason_fabric_version_0_12">إصدار Fabric 0.12 أو أعلى غير متوافق مع المودات المثبتة حالياً. تحتاج إلى الرجوع إلى الإصدار 0.11.7.</string>
-    <string name="game_crash_reason_fabric_warnings">تحذير مدير مودات Fabric:\n%1$s</string>
-    <string name="game_crash_reason_file_already_exists">تعطلت اللعبة لأن الملف %1$s موجود بالفعل.\n\nيمكنك محاولة عمل نسخة احتياطية وحذف الملف ثم إعادة إطلاق اللعبة.</string>
+    <string name="game_crash_reason_fabric_warnings" formatted="false">تحذير مدير مودات Fabric:\n%1$s</string>
+    <string name="game_crash_reason_file_already_exists" formatted="false">تعطلت اللعبة لأن الملف %1$s موجود بالفعل.\n\nيمكنك محاولة عمل نسخة احتياطية وحذف الملف ثم إعادة إطلاق اللعبة.</string>
     <string name="game_crash_reason_file_changed">تعطلت اللعبة لعدم اجتيازها اختبارات السلامة.</string>
     <string name="game_crash_reason_gl_operation_failure">تعطلت اللعبة بسبب بعض المودات أو حزم الشيدر أو الموارد.</string>
-    <string name="game_crash_reason_illegal_access_error">تعطلت اللعبة بسبب بعض المودات.\nإذا كنت تعرف المود: %1$s، يمكنك حذفه والمحاولة مرة أخرى.</string>
+    <string name="game_crash_reason_illegal_access_error" formatted="false">تعطلت اللعبة بسبب بعض المودات.\nإذا كنت تعرف المود: %1$s، يمكنك حذفه والمحاولة مرة أخرى.</string>
     <string name="game_crash_reason_optifine_is_not_compatible_with_forge">تعطلت اللعبة لأن OptiFine غير متوافق مع الإصدار الحالي من Forge.</string>
     <string name="game_crash_reason_mod_files_are_decompressed">لا يمكن للعبة الاستمرار لأن ملف المود تم فك ضغطه!\nيرجى وضع ملف المود بالكامل مباشرة داخل مجلد المودات.</string>
     <string name="game_crash_reason_cannot_find_launch_target_fmlclient">تعذر العثور على هدف التشغيل لأن تثبيت Forge غير مكتمل.</string>
@@ -498,20 +498,20 @@
     <string name="game_crash_reason_night_config_fixes">حدث خطأ بسبب Night Config.\nيمكنك محاولة تثبيت مود Night Config Fixes للمساعدة في حل المشكلة.</string>
     <string name="game_crash_reason_optifine_causes_the_world_to_fail_to_load">قد تتعطل اللعبة بسبب OptiFine. حاول تغيير إصدار OptiFine.</string>
     <string name="game_crash_reason_jvm_32bit">تعطلت اللعبة لأن الذاكرة المخصصة تتجاوز حد بيئة Java بـ 32-بت.</string>
-    <string name="game_crash_reason_loading_crashed_forge">تعطلت اللعبة بسبب المود %1$s (%2$s).</string>
-    <string name="game_crash_reason_loading_crashed_fabric">تعطلت اللعبة بسبب المود %1$s.</string>
+    <string name="game_crash_reason_loading_crashed_forge" formatted="false">تعطلت اللعبة بسبب المود %1$s (%2$s).</string>
+    <string name="game_crash_reason_loading_crashed_fabric" formatted="false">تعطلت اللعبة بسبب المود %1$s.</string>
     <string name="game_crash_reason_forge_repeat_installation">تعذر التشغيل بسبب تثبيت Forge بشكل مكرر.</string>
     <string name="game_crash_reason_optifine_repeat_installation">تعذر التشغيل بسبب تكرار تثبيت OptiFine.</string>
     <string name="game_crash_reason_memory_exceeded">تعطلت اللعبة بسبب تخصيص ذاكرة أكثر من اللازم.</string>
-    <string name="game_crash_reason_mod">تعطلت اللعبة بسبب المود %1$s.</string>
+    <string name="game_crash_reason_mod" formatted="false">تعطلت اللعبة بسبب المود %1$s.</string>
     <string name="game_crash_reason_mod_resolution">تعطلت اللعبة بسبب فشل مطابقة المودات.</string>
     <string name="game_crash_reason_forgemod_resolution">تعطلت اللعبة بسبب فشل مطابقة مودات Forge.</string>
-    <string name="game_crash_reason_mod_resolution_collection">تعطلت اللعبة لأن إصدار المود غير متوافق.\n\n%1$s يتطلب %2$s.</string>
-    <string name="game_crash_reason_mod_resolution_conflict">تعطلت اللعبة بسبب تعارض المودات: %1$s يتعارض مع %2$s.</string>
-    <string name="game_crash_reason_mod_resolution_missing">تعطلت اللعبة لأن هناك مودات تابعة مفقودة: %1$s يتطلب المود: %2$s.</string>
+    <string name="game_crash_reason_mod_resolution_collection" formatted="false">تعطلت اللعبة لأن إصدار المود غير متوافق.\n\n%1$s يتطلب %2$s.</string>
+    <string name="game_crash_reason_mod_resolution_conflict" formatted="false">تعطلت اللعبة بسبب تعارض المودات: %1$s يتعارض مع %2$s.</string>
+    <string name="game_crash_reason_mod_resolution_missing" formatted="false">تعطلت اللعبة لأن هناك مودات تابعة مفقودة: %1$s يتطلب المود: %2$s.</string>
     <string name="game_crash_reason_mod_resolution_missing_minecraft">تعطلت اللعبة لأن المود غير متوافق مع إصدار ماين كرافت الحالي.</string>
-    <string name="game_crash_reason_mod_resolution_mod_version">%1$s (الإصدار: %2$s)</string>
-    <string name="game_crash_reason_mod_resolution_mod_version_any">%1$s (أي إصدار)</string>
+    <string name="game_crash_reason_mod_resolution_mod_version" formatted="false">%1$s (الإصدار: %2$s)</string>
+    <string name="game_crash_reason_mod_resolution_mod_version_any" formatted="false">%1$s (أي إصدار)</string>
     <string name="game_crash_reason_modlauncher_8">إصدار Forge غير متوافق مع بيئة Java الخاصة بك، جرب تحديث Forge.</string>
     <string name="game_crash_reason_no_class_def_found_error">تعذر تشغيل اللعبة لنقص في الشيفرات البرمجية أو الملفات التالفة.</string>
     <string name="game_crash_reason_no_such_method_error">تعذر التشغيل بسبب عدم توافق المودات أو تلف بعض الملفات.</string>
@@ -519,9 +519,9 @@
     <string name="game_crash_reason_out_of_memory">تعطلت اللعبة لنفاد الذاكرة العشوائية (RAM).\n\nجرب زيادة الذاكرة المخصصة من إعدادات اللعبة أو تقليل المودات.</string>
     <string name="game_crash_reason_resolution_too_high">تعطلت اللعبة لاستخدام حزمة موارد بدقة خامات عالية جداً.</string>
     <string name="game_crash_reason_processing_of_javaagent_failed">تعطلت اللعبة بسبب فشل معالجة -javaagent.</string>
-    <string name="game_crash_reason_stacktrace">سبب الانهيار غير معروف. تفقد تفاصيل السجل أدناه:\n\n%s</string>
+    <string name="game_crash_reason_stacktrace" formatted="false">سبب الانهيار غير معروف. تفقد تفاصيل السجل أدناه:\n\n%s</string>
     <string name="game_crash_reason_unknown">تعذر معرفة سبب انهيار اللعبة، يرجى مراجعة سجلات اللعبة الكاملة!</string>
-    <string name="game_crash_reason_unsatisfied_link_error">تعذر تشغيل ماين كرافت بسبب مكتبات مفقودة: %1$s.</string>
+    <string name="game_crash_reason_unsatisfied_link_error" formatted="false">تعذر تشغيل ماين كرافت بسبب مكتبات مفقودة: %1$s.</string>
     <string name="game_crash_title">تعطلت اللعبة</string>
     <string name="game_crash_title_add">يجب عليك إرسال ملف سجل الانهيار كاملًا بدلاً من أخذ لقطة شاشة</string>
 
@@ -536,19 +536,19 @@
     <string name="input_url">يجب أن يكون الإدخال رابطاً صحيحاً (URL).</string>
 
     <string name="install_change_version">تغيير الإصدار</string>
-    <string name="install_change_version_confirm">هل أنت متأكد من رغبتك في تبديل %s من الإصدار %s إلى %s؟</string>
+    <string name="install_change_version_confirm" formatted="false">هل أنت متأكد من رغبتك في تبديل %s من الإصدار %s إلى %s؟</string>
     <string name="install_failed">فشل التثبيت</string>
     <string name="install_failed_downloading">تعذر تنزيل بعض الملفات المطلوبة.</string>
-    <string name="install_failed_downloading_detail">تعذر تنزيل الملف: %s</string>
-    <string name="install_failed_downloading_timeout">انتهت مهلة التنزيل أثناء جلب: %s</string>
+    <string name="install_failed_downloading_detail" formatted="false">تعذر تنزيل الملف: %s</string>
+    <string name="install_failed_downloading_timeout" formatted="false">انتهت مهلة التنزيل أثناء جلب: %s</string>
     <string name="install_failed_install_online">تعذر تحديد الملف المقدم. إذا كنت تثبت موداً، فانتقل إلى صفحة المودات.</string>
     <string name="install_failed_malformed">الملفات التي تم تنزيلها تالفة. يمكنك محاولة الإصلاح بالتبديل لخادم تنزيل آخر.</string>
     <string name="install_failed_optifine_conflict">لا يمكن تثبيت Fabric و OptiFine و Forge معاً على ماين كرافت 1.13 أو أحدث.</string>
     <string name="install_failed_optifine_forge_1.17">لإصدارات ماين كرافت 1.17.1 أو الأقدم، يدعم Forge إصدار OptiFine H1 Pre2 أو أحدث فقط.</string>
-    <string name="install_failed_version_mismatch">تتطلب هذه المكتبة إصدار اللعبة %s، ولكن المثبت حالياً هو %s.</string>
-    <string name="install_installer_change_version">الإصدار %s غير متوافق مع إصدار اللعبة الحالي. انقر هنا لاستبداله أو حذفه.</string>
-    <string name="install_installer_choose">اختر إصدار %s الخاص بك</string>
-    <string name="install_installer_depend">يتطلب %s</string>
+    <string name="install_failed_version_mismatch" formatted="false">تتطلب هذه المكتبة إصدار اللعبة %s، ولكن المثبت حالياً هو %s.</string>
+    <string name="install_installer_change_version" formatted="false">الإصدار %s غير متوافق مع إصدار اللعبة الحالي. انقر هنا لاستبداله أو حذفه.</string>
+    <string name="install_installer_choose" formatted="false">اختر إصدار %s الخاص بك</string>
+    <string name="install_installer_depend" formatted="false">يتطلب %s</string>
     <string name="install_installer_fabric" translatable="false">Fabric</string>
     <string name="install_installer_fabric_api" translatable="false">Fabric API</string>
     <string name="install_installer_fabric_api_warning">تحذير: Fabric API هو مود وسيتم تثبيته في مجلد المودات الخاص بنسخة اللعبة. يرجى عدم تغيير مسار مجلد العمل.</string>
@@ -556,23 +556,23 @@
     <string name="install_installer_forge" translatable="false">Forge</string>
     <string name="install_installer_neoforge" translatable="false">NeoForge</string>
     <string name="install_installer_game" translatable="false">Minecraft</string>
-    <string name="install_installer_incompatible">غير متوافق مع %s</string>
-    <string name="install_installer_install">تثبيت %s</string>
+    <string name="install_installer_incompatible" formatted="false">غير متوافق مع %s</string>
+    <string name="install_installer_install" formatted="false">تثبيت %s</string>
     <string name="install_installer_legacyfabric" translatable="false">Legacy Fabric</string>
     <string name="install_installer_legacyfabric_api" translatable="false">Legacy Fabric API</string>
     <string name="install_installer_legacyfabric_api_warning">تحذير: Legacy Fabric API هو مود وسيتم تثبيته في مجلد المودات.</string>
     <string name="install_installer_install_offline">تثبيت / تحديث من ملف محلي</string>
     <string name="install_installer_install_offline_extension">مثبت Forge/OptiFine</string>
-    <string name="installer_running_processor">جاري تشغيل المثبت (Java %s)…</string>
-    <string name="installer_running_processor_step">جاري تشغيل المثبت %1$d/%2$d: %3$s (Java %4$s)…</string>
+    <string name="installer_running_processor" formatted="false">جاري تشغيل المثبت (Java %s)…</string>
+    <string name="installer_running_processor_step" formatted="false">جاري تشغيل المثبت %1$d/%2$d: %3$s (Java %4$s)…</string>
     <string name="installer_recent_logs">السجلات الأخيرة:</string>
-    <string name="installer_process_retrying">انتهت مهلة عملية التثبيت، جاري إعادة المحاولة (%1$d/%2$d)…</string>
+    <string name="installer_process_retrying" formatted="false">انتهت مهلة عملية التثبيت، جاري إعادة المحاولة (%1$d/%2$d)…</string>
     <string name="installer_process_start_error">فشل بدء عملية التثبيت</string>
     <string name="installer_process_bad_state">تعطل مثبت الحزم بشكل متكرر وتم حظره مؤقتاً بواسطة النظام.</string>
     <string name="installer_process_no_exit_code">لم يُرجِع مثبت الحزم رمز خروج، قد يكون قد توقف بشكل غير طبيعي.</string>
     <string name="installer_process_no_response">عملية المثبت لا تستجيب، تم إنهاؤها قسرياً.</string>
     <string name="installer_process_failed_to_start">فشل تشغيل عملية المثبت</string>
-    <string name="installer_exit_code_invalid">رمز خروج المثبت غير صالح: %1$s</string>
+    <string name="installer_exit_code_invalid" formatted="false">رمز خروج المثبت غير صالح: %1$s</string>
     <string name="install_installer_liteloader" translatable="false">LiteLoader</string>
     <string name="install_installer_not_installed">غير محدد</string>
     <string name="install_installer_optifine" translatable="false">OptiFine</string>
@@ -584,7 +584,7 @@
     <string name="install_new_game_malformed">اسم غير صالح</string>
     <string name="install_success">تم التثبيت بنجاح.</string>
 
-    <string name="modpack_completion_confirm">ملفات حزمة المودات التالية مفقودة وسيتم استعادتها تلقائياً. إذا قمت بحذفها أو تحديثها عمداً، فتخطى هذه المرة أو عطل الاستعادة التلقائية.\n%s</string>
+    <string name="modpack_completion_confirm" formatted="false">ملفات حزمة المودات التالية مفقودة وسيتم استعادتها تلقائياً. إذا قمت بحذفها أو تحديثها عمداً، فتخطى هذه المرة أو عطل الاستعادة التلقائية.\n%s</string>
     <string name="modpack_completion_continue">استعادة</string>
     <string name="modpack_completion_skip">تخطٍّ هذه المرة</string>
     <string name="modpack_completion_disable">تعطيل الاستعادة التلقائية</string>
@@ -601,7 +601,7 @@
     <string name="launch_error_java_continue">متابعة</string>
     <string name="launch_error_java_continue_disable">متابعة (تعطيل الفحوصات)</string>
     <string name="launch_failed">تعذر العب</string>
-    <string name="launch_failed_download_library">تعذر تنزيل المكتبة %s.</string>
+    <string name="launch_failed_download_library" formatted="false">تعذر تنزيل المكتبة %s.</string>
 
     <string name="launch_state_version">جاري تحليل الإصدار</string>
     <string name="launch_state_mods">جاري فحص المودات</string>
@@ -665,7 +665,7 @@
     <string name="menu_settings_gesture_mode">وضع الإيماءات</string>
     <string name="menu_settings_gesture_mode_build">بناء</string>
     <string name="menu_settings_gesture_mode_fight">قتال</string>
-    <string name="menu_settings_gesture_current">الوضع الحالي هو %s</string>
+    <string name="menu_settings_gesture_current" formatted="false">الوضع الحالي هو %s</string>
     <string name="menu_settings_gyro">جيروسكوب (Gyroscope)</string>
     <string name="menu_settings_gyro_invert_x">عكس المحور الأفقي (X)</string>
     <string name="menu_settings_gyro_invert_y">عكس المحور الرأسي (Y)</string>
@@ -696,7 +696,7 @@
     <string name="key_modifier_alt">Alt</string>
     <string name="key_bind_listening">اضغط على مفتاح للربط (BACK للإلغاء)</string>
     <string name="key_bind_unknown">مفتاح غير معروف، جرب مفتاحاً آخر</string>
-    <string name="key_bind_done">تم الربط بـ %1$s</string>
+    <string name="key_bind_done" formatted="false">تم الربط بـ %1$s</string>
     <string name="key_bind_conflict">يتعارض مع اختصار آخر</string>
     <string name="menu_settings_gamepad">يد التحكم (Gamepad)</string>
     <string name="menu_settings_gamepad_control">التحكم بـ Gamepad</string>
@@ -740,10 +740,10 @@
     <string name="message_copy">تم النسخ بنجاح!</string>
     <string name="message_doing">يرجى الانتظار</string>
     <string name="message_downloading">جاري التنزيل</string>
-    <string name="mods_dependency_skipped_note">تعذر حل %1$d من التبعيات وتم تخطيها</string>
+    <string name="mods_dependency_skipped_note" formatted="false">تعذر حل %1$d من التبعيات وتم تخطيها</string>
     <string name="download_ready_to_install">تم التنزيل · انقر للتثبيت</string>
     <string name="mods_already_installed">المود مثبت مسبقاً</string>
-    <string name="mods_installed_skipped_note">تم تخطي %1$d مود مثبت مسبقاً</string>
+    <string name="mods_installed_skipped_note" formatted="false">تم تخطي %1$d مود مثبت مسبقاً</string>
     <string name="mods_dependency_resolving">جاري حل التبعيات المطلوبة…</string>
     <string name="download_manager">مدير التنزيلات</string>
     <string name="game_service_channel">اللعبة قيد التشغيل</string>
@@ -767,7 +767,7 @@
     <string name="modpack_download">تنزيل حزمة المودات</string>
     <string name="modpack_enter_name">أدخل اسماً لحزمة المودات هذه.</string>
     <string name="modpack_export">تصدير حزمة المودات</string>
-    <string name="modpack_external_detected">تم اكتشاف حزمة مودات خارجية: %s</string>
+    <string name="modpack_external_detected" formatted="false">تم اكتشاف حزمة مودات خارجية: %s</string>
     <string name="modpack_export_as">تصدير حزمة المودات باسم…</string>
     <string name="modpack_file_api">بادئة رابط حزمة المودات</string>
     <string name="modpack_files_blueprints">مخططات BuildCraft</string>
@@ -783,11 +783,11 @@
     <string name="modpack_files_saves">عوالم الحفظ</string>
     <string name="modpack_files_scripts">ملف تكوين MineTweaker</string>
     <string name="modpack_files_servers_dat">ملف قائمة الخوادم</string>
-    <string name="modpack_install">تثبيت حزمة المودات %s</string>
+    <string name="modpack_install" formatted="false">تثبيت حزمة المودات %s</string>
     <string name="modpack_installing">جاري تثبيت حزمة المودات</string>
     <string name="modpack_introduction">حزم CurseForge، Modrinth، MultiMC، و MCBBS مدعومة حالياً.</string>
     <string name="modpack_invalid">حزمة مودات غير صالحة، يمكنك محاولة إعادة تنزيلها.</string>
-    <string name="modpack_mismatched_type">نوع حزمة المودات غير متطابق، النسخة الحالية من نوع %s، بينما المقدمة من نوع %s.</string>
+    <string name="modpack_mismatched_type" formatted="false">نوع حزمة المودات غير متطابق، النسخة الحالية من نوع %s، بينما المقدمة من نوع %s.</string>
     <string name="modpack_name">اسم حزمة المودات</string>
     <string name="modpack_not_a_valid_name">اسم حزمة مودات غير صالح</string>
     <string name="modpack_origin">المصدر</string>
@@ -930,8 +930,8 @@
 
     <string name="mods">المودات</string>
     <string name="mods_add">إضافة مودات</string>
-    <string name="mods_add_failed">فشل تثبيت المود %s.</string>
-    <string name="mods_add_success">تم تثبيت %s بنجاح.</string>
+    <string name="mods_add_failed" formatted="false">فشل تثبيت المود %s.</string>
+    <string name="mods_add_success" formatted="false">تم تثبيت %s بنجاح.</string>
     <string name="mods_broken_dependency_title">تبعية مكسورة</string>
     <string name="mods_broken_dependency_desc">هذه التبعية كانت موجودة سابقاً لكنها غير موجودة الآن. جرب مصدر تنزيل آخر.</string>
     <string name="mods_category">الفئة</string>
@@ -962,8 +962,8 @@
     <string name="mods_dependency_broken">مود أساسي تالف أو تم حذفه من المستودع.</string>
     <string name="mods_disable">تعطيل</string>
     <string name="mods_download">تنزيل المودات</string>
-    <string name="mods_download_title">تنزيل مود - %1s</string>
-    <string name="mods_download_recommend">إصدار المود الموصى به - ماين كرافت %1s</string>
+    <string name="mods_download_title" formatted="false">تنزيل مود - %1s</string>
+    <string name="mods_download_recommend" formatted="false">إصدار المود الموصى به - ماين كرافت %1s</string>
     <string name="mods_enable">تفعيل</string>
     <string name="mods_manage">إدارة المودات</string>
     <string name="mods_mcbbs">MCBBS</string>
@@ -972,7 +972,7 @@
     <string name="mods_mcmod_search">بحث في MCMOD</string>
     <string name="mods_modrinth">Modrinth</string>
     <string name="mods_aggregate">مجمّع</string>
-    <string name="search_aggregate_partial">فشل الاتصال بـ %1$s، يتم عرض النتائج من %2$s فقط حالياً.</string>
+    <string name="search_aggregate_partial" formatted="false">فشل الاتصال بـ %1$s، يتم عرض النتائج من %2$s فقط حالياً.</string>
     <string name="favorites">المفضلة</string>
     <string name="favorite_empty_title">لا توجد مفضلات حتى الآن</string>
     <string name="favorite_empty_guide">1. اسحب نتيجة البحث لليسار لفتح قائمة الخيارات\n2. انقر على زر النجمة لإضافة الموارد المفضلة\n3. يتم حفظ المفضلة هنا.</string>
@@ -985,10 +985,10 @@
     <string name="favorite_batch_no_mods">لا توجد مودات في المفضلة.</string>
     <string name="favorite_batch_failed">فشل التنزيل المجمع. حاول مرة أخرى.</string>
     <string name="favorite_batch_none_matched">لا توجد مودات مفضلة تطابق الإصدار أو المشغل الحالي.</string>
-    <string name="favorite_batch_skipped_note">تم تخطي %d مود لعدم مطابقة الإصدار.</string>
+    <string name="favorite_batch_skipped_note" formatted="false">تم تخطي %d مود لعدم مطابقة الإصدار.</string>
     <string name="favorite_batch_parsing">جاري حل المودات القابلة للتنزيل...</string>
     <string name="favorite_batch_download">تنزيل</string>
-    <string name="favorite_batch_queued">تمت إضافة %d ملفات إلى قائمة الانتظار</string>
+    <string name="favorite_batch_queued" formatted="false">تمت إضافة %d ملفات إلى قائمة الانتظار</string>
     <string name="favorite_operation_in_progress">العملية جارية، يرجى الانتظار.</string>
     <string name="favorite_group">المجموعات</string>
     <string name="favorite_group_select">اختر المجموعات</string>
@@ -998,15 +998,15 @@
     <string name="favorite_group_none">لا توجد مجموعات بعد. أنشئ واحدة أدناه.</string>
     <string name="favorite_invert_select">عكس</string>
     <string name="favorite_remove_selected">إزالة</string>
-    <string name="favorite_multi_remove_confirm">إزالة العناصر المحددة (%d) من المفضلة؟</string>
+    <string name="favorite_multi_remove_confirm" formatted="false">إزالة العناصر المحددة (%d) من المفضلة؟</string>
     <string name="favorite_group_select_hint">المجموعات اختيارية. أكد للحفظ بدونها أو أنشئ مجموعة أولاً.</string>
     <string name="favorite_group_rename">إعادة تسمية</string>
-    <string name="favorite_group_delete_confirm">حذف المجموعة "%1$s"؟ ستظل المودات بداخله محفوظة.</string>
+    <string name="favorite_group_delete_confirm" formatted="false">حذف المجموعة "%1$s"؟ ستظل المودات بداخله محفوظة.</string>
     <string name="favorite_group_exists">توجد مجموعة بهذا الاسم بالفعل</string>
     <string name="mods_batch_resolving">جاري حل تبعيات المودات</string>
     <string name="mods_name">الاسم</string>
     <string name="mods_not_modded">يجب تثبيت مدير مودات (Fabric أو Forge أو LiteLoader) أولاً لإدارة موداتك!</string>
-    <string name="message_broken_mods">ملفات المودات التالية تالفة. هل تريد حذفها؟\n%s</string>
+    <string name="message_broken_mods" formatted="false">ملفات المودات التالية تالفة. هل تريد حذفها؟\n%s</string>
     <string name="mods_restore">استرجاع (Rollback)</string>
     <string name="mods_url">الصفحة الرسمية</string>
     <string name="mods_update_modpack_mod_warning">تحديث المودات داخل حزمة مودات قد يؤدي لنتائج غير متوقعة وربما تلف الحزمة. هل أنت متأكد؟</string>
@@ -1032,25 +1032,25 @@
     <string name="resourcepack_add">استيراد حزمة موارد</string>
     <string name="resourcepack_invalid">غير صالح</string>
     <string name="resourcepack_rename_exists">توجد حزمة موارد بنفس الاسم بالفعل</string>
-    <string name="resourcepack_add_success">تم استيراد حزمة الموارد %s.</string>
-    <string name="resourcepack_add_failed">فشل استيراد حزمة الموارد %s.</string>
-    <string name="resourcepack_info_type">النوع: %s</string>
+    <string name="resourcepack_add_success" formatted="false">تم استيراد حزمة الموارد %s.</string>
+    <string name="resourcepack_add_failed" formatted="false">فشل استيراد حزمة الموارد %s.</string>
+    <string name="resourcepack_info_type" formatted="false">النوع: %s</string>
     <string name="resourcepack_info_type_folder">مجلد</string>
     <string name="resourcepack_info_type_zip">أرشيف Zip</string>
-    <string name="resourcepack_info_file_name">اسم الملف: %s</string>
-    <string name="resourcepack_info_file_size">الحجم: %s</string>
-    <string name="resourcepack_info_format">تنسيق الحزمة: %s</string>
+    <string name="resourcepack_info_file_name" formatted="false">اسم الملف: %s</string>
+    <string name="resourcepack_info_file_size" formatted="false">الحجم: %s</string>
+    <string name="resourcepack_info_format" formatted="false">تنسيق الحزمة: %s</string>
     <string name="shaderpack_manage">حزم الشيدر (Shader Packs)</string>
     <string name="shaderpack_add">استيراد حزمة شيدر</string>
     <string name="shaderpack_invalid">حزمة شيدر غير صالحة</string>
     <string name="shaderpack_rename_exists">توجد حزمة شيدر بنفس الاسم بالفعل</string>
-    <string name="shaderpack_add_success">تم استيراد حزمة الشيدر %s.</string>
-    <string name="shaderpack_add_failed">فشل استيراد حزمة الشيدر %s.</string>
-    <string name="shaderpack_info_type">النوع: %s</string>
+    <string name="shaderpack_add_success" formatted="false">تم استيراد حزمة الشيدر %s.</string>
+    <string name="shaderpack_add_failed" formatted="false">فشل استيراد حزمة الشيدر %s.</string>
+    <string name="shaderpack_info_type" formatted="false">النوع: %s</string>
     <string name="shaderpack_info_type_folder">مجلد</string>
     <string name="shaderpack_info_type_zip">أرشيف Zip</string>
-    <string name="shaderpack_info_file_name">اسم الملف: %s</string>
-    <string name="shaderpack_info_file_size">الحجم: %s</string>
+    <string name="shaderpack_info_file_name" formatted="false">اسم الملف: %s</string>
+    <string name="shaderpack_info_file_size" formatted="false">الحجم: %s</string>
 
     <string name="search">بحث</string>
     <string name="search_hint_chinese">استعلامات البحث تدعم الصينية والإنجليزية</string>
@@ -1198,7 +1198,7 @@
     <string name="settings_launcher_language_traditional_chinese_tw" translatable="false">繁體中文（台灣）</string>
     <string name="settings_launcher_launcher_log_export">تصدير سجلات المشغل</string>
     <string name="settings_launcher_launcher_log_export_failed">تعذر تصصدير السجلات</string>
-    <string name="settings_launcher_launcher_log_export_success">تم تصدير السجلات إلى %s</string>
+    <string name="settings_launcher_launcher_log_export_success" formatted="false">تم تصدير السجلات إلى %s</string>
     <string name="settings_launcher_theme_mode">وضع الثيم (Theme Mode)</string>
     <string name="settings_launcher_theme_mode_desc">التبديل بين الوضع الفاتح والداكن.</string>
     <string name="settings_launcher_theme_mode_follow">اتباع النظام</string>
@@ -1212,7 +1212,7 @@
     <string name="settings_launcher_theme2_desc">تخصيص اللون الثانوي (الوضع الفاتح).</string>
     <string name="settings_launcher_theme2_dark">لون الثيم الثانوي (داكن)</string>
     <string name="settings_launcher_theme2_dark_desc">تخصيص اللون الثانوي (الوضع الداكن).</string>
-    <string name="settings_launcher_color_alpha">شفافية الألوان</string>
+    <string name="settings_launcher_color_alpha" formatted="false">شفافية الألوان</string>
     <string name="settings_launcher_color_alpha_desc" formatted="false">شفافية ألوان البطاقات وعناصر الواجهة. 0% شفافة كلياً، 100% معتمة كلياً.</string>
     <string name="settings_launcher_theme_fetch_background">استخراج من صورة الخلفية</string>
     <string name="settings_launcher_background_lt">خلفية المشغل (الوضع الفاتح)</string>
@@ -1246,13 +1246,13 @@
 
     <string name="settings_memory">الذاكرة العشوائية (RAM)</string>
     <string name="settings_memory_desc">تعيين الحد الأقصى للذاكرة (ميغابايت) المتاحة للعبة.</string>
-    <string name="settings_memory_allocate_auto">%1$.1f غيغابايت كحد أدنى / %2$.1f غيغابايت مخصصة</string>
-    <string name="settings_memory_allocate_auto_exceeded">%1$.1f غيغابايت كحد أدنى / %2$.1f غيغابايت مخصصة (%3$.1f غيغابايت متاحة)</string>
-    <string name="settings_memory_allocate_manual">%1$.1f غيغابايت مخصصة</string>
-    <string name="settings_memory_allocate_manual_exceeded">%1$.1f غيغابايت مخصصة (%3$.1f غيغابايت متاحة)</string>
+    <string name="settings_memory_allocate_auto" formatted="false">%1$.1f غيغابايت كحد أدنى / %2$.1f غيغابايت مخصصة</string>
+    <string name="settings_memory_allocate_auto_exceeded" formatted="false">%1$.1f غيغابايت كحد أدنى / %2$.1f غيغابايت مخصصة (%3$.1f غيغابايت متاحة)</string>
+    <string name="settings_memory_allocate_manual" formatted="false">%1$.1f غيغابايت مخصصة</string>
+    <string name="settings_memory_allocate_manual_exceeded" formatted="false">%1$.1f غيغابايت مخصصة (%3$.1f غيغابايت متاحة)</string>
     <string name="settings_memory_auto_allocate">تخصيص تلقائي</string>
     <string name="settings_memory_lower_bound">الحد الأدنى للذاكرة</string>
-    <string name="settings_memory_used_per_total">%1$.1f غيغابايت مستخدمة / %2$.1f غيغابايت إجمالي</string>
+    <string name="settings_memory_used_per_total" formatted="false">%1$.1f غيغابايت مستخدمة / %2$.1f غيغابايت إجمالي</string>
     <string name="settings_physical_memory">حجم الذاكرة الفيزيائية</string>
     <string name="settings_tabs_installers">مديرو المودات (Modloaders)</string>
     <string name="settings_type_global_manage">إعدادات اللعبة العامة</string>
@@ -1288,7 +1288,7 @@
     <string name="style_rocker_fill_color">لون تعبئة العصا</string>
 
     <string name="terracotta">اللعب الجماعي (Terracotta)</string>
-    <string name="terracotta_metadata">إصدار Terracotta: %s\nإصدار EasyTier: %s</string>
+    <string name="terracotta_metadata" formatted="false">إصدار Terracotta: %s\nإصدار EasyTier: %s</string>
     <string name="terracotta_code_hint" translatable="false">U/XXXX-XXXX-XXXX-XXXX</string>
     <string name="terracotta_easytier">حول EasyTier</string>
     <string name="terracotta_terracotta">Terracotta | اللعب الجماعي</string>
@@ -1315,7 +1315,7 @@
     <string name="terracotta_menu_open">فتح</string>
     <string name="terracotta_notification_title">Terracotta قيد التشغيل</string>
     <string name="notification_title">خدمة عمليات FXL قيد التشغيل!</string>
-    <string name="terracotta_notification_desc">الهوية: %s، الحالة: %s</string>
+    <string name="terracotta_notification_desc" formatted="false">الهوية: %s، الحالة: %s</string>
     <string name="terracotta_status_waiting_host_title">أريد استضافة جلسة</string>
     <string name="terracotta_status_waiting_host_desc">أنشئ غرفة وولد رمز دعوة للعب مع الأصدقاء</string>
     <string name="terracotta_status_waiting_guest_title">أريد الانضمام إلى جلسة</string>
@@ -1369,15 +1369,15 @@
     <string name="update_check">التحقق من التحديثات</string>
     <string name="update_checking">جاري التحقق من التحديثات</string>
     <string name="update_check_failed">فشل التحقق من التحديث</string>
-    <string name="update_date">التاريخ: %s</string>
-    <string name="update_description">الوصف:\n%s</string>
+    <string name="update_date" formatted="false">التاريخ: %s</string>
+    <string name="update_description" formatted="false">الوصف:\n%s</string>
     <string name="update_exist">تم اكتشاف إصدار قابل للتحديث</string>
     <string name="update_failed">فشل تنزيل أحدث إصدار، أعد المحاولة أو نزله من الموقع الرسمي.</string>
     <string name="update_ignore">تجاهل هذا الإصدار</string>
     <string name="update_launcher">جاري تحديث المشغل</string>
     <string name="update_not_exist">لا يوجد تحديث متوفر</string>
-    <string name="update_type">النوع: %s</string>
-    <string name="update_version">الإصدار: %s</string>
+    <string name="update_type" formatted="false">النوع: %s</string>
+    <string name="update_version" formatted="false">الإصدار: %s</string>
     <string name="update_version_release">إصدار مستقر (Release)</string>
     <string name="update_version_beta">تجريبي (Beta)</string>
 
@@ -1400,23 +1400,23 @@
     <string name="version_manage_duplicate_prompt">اسم النسخة</string>
     <string name="version_manage_duplicate_confirm">ستحتوي النسخة المكررة على نسخة من جميع ملفات هذه النسخة، مع مجلد وإعدادات معزولة.</string>
     <string name="version_manage_redownload_assets_index">تحديث أصول اللعبة</string>
-    <string name="version_manage_remove_confirm">هل أنت متأكد من إزالة الإصدار %s نهائياً؟ لا يمكن التراجع عن هذا الإجراء!</string>
+    <string name="version_manage_remove_confirm" formatted="false">هل أنت متأكد من إزالة الإصدار %s نهائياً؟ لا يمكن التراجع عن هذا الإجراء!</string>
     <string name="version_manage_remove_confirm_independent">نظراً لأن هذه النسخة مخزنة في مجلد معزول، سيؤدي حذفها إلى حذف عوالمها وبياناتها. هل تريد الحذف؟</string>
     <string name="version_manage_remove_libraries">حذف جميع المكتبات</string>
     <string name="version_manage_remove_deep">حذف عميق (Deep Delete)</string>
     <string name="version_manage_remove_deep_hint">ينظف "الحذف العميق" أيضاً المكتبات والأصول المرتبطة حصرياً بهذا الإصدار.</string>
-    <string name="version_manage_remove_deep_done">تمت إزالة الإصدار %1$s، وتم تنظيف %2$d من ملفات المكتبات/الأصول، وتوفير %3$.1f ميغابايت</string>
+    <string name="version_manage_remove_deep_done" formatted="false">تمت إزالة الإصدار %1$s، وتم تنظيف %2$d من ملفات المكتبات/الأصول، وتوفير %3$.1f ميغابايت</string>
     <string name="version_manage_remove_deep_failed">فشل تعداد المكتبات المرتبطة، تمت إزالة مجلد الإصدار فقط</string>
     <string name="version_manage_remove_deep_done_title">انتهى الحذف العميق</string>
     <string name="version_manage_remove_deep_failed_title">فشل الحذف العميق</string>
-    <string name="version_manage_remove_progress_title">جاري إزالة الإصدار %s</string>
-    <string name="version_deep_clean_parsing">جاري تحليل الإصدار %s</string>
-    <string name="version_deep_clean_references">جاري جمع مراجع الإصدار %s</string>
-    <string name="version_deep_clean_folder">جاري حذف مجلد الإصدار %s</string>
-    <string name="version_deep_clean_library">جاري حذف المكتبة %s</string>
-    <string name="version_deep_clean_asset_index">جاري حذف فهرس الأصول %s</string>
-    <string name="version_deep_clean_assets">جاري حذف %2$d من ملفات الأصول الخاصة بـ %1$s</string>
-    <string name="version_deep_clean_virtual">جاري حذف الأصول الافتراضية %s</string>
+    <string name="version_manage_remove_progress_title" formatted="false">جاري إزالة الإصدار %s</string>
+    <string name="version_deep_clean_parsing" formatted="false">جاري تحليل الإصدار %s</string>
+    <string name="version_deep_clean_references" formatted="false">جاري جمع مراجع الإصدار %s</string>
+    <string name="version_deep_clean_folder" formatted="false">جاري حذف مجلد الإصدار %s</string>
+    <string name="version_deep_clean_library" formatted="false">جاري حذف المكتبة %s</string>
+    <string name="version_deep_clean_asset_index" formatted="false">جاري حذف فهرس الأصول %s</string>
+    <string name="version_deep_clean_assets" formatted="false">جاري حذف %2$d من ملفات الأصول الخاصة بـ %1$s</string>
+    <string name="version_deep_clean_virtual" formatted="false">جاري حذف الأصول الافتراضية %s</string>
     <string name="version_manage_rename">إعادة تسمية النسخة</string>
     <string name="version_manage_rename_message">إعادة تسمية الإصدار</string>
     <string name="version_manage_rename_new">الاسم الجديد</string>
@@ -1447,21 +1447,21 @@
     <string name="world_add">إضافة عالم (.zip)</string>
     <string name="world_datapack">إدارة حزم البيانات (Datapacks)</string>
     <string name="world_datapack_1_13">ماين كرافت 1.13 أو أحدث تدعم حزم البيانات فقط.</string>
-    <string name="world_description">%s. آخر لعب في %s. إصدار اللعبة: %s.</string>
+    <string name="world_description" formatted="false">%s. آخر لعب في %s. إصدار اللعبة: %s.</string>
     <string name="world_download">تنزيل عالم</string>
     <string name="world_duplicate">نسخ العالم</string>
     <string name="world_export">تصدير العالم</string>
     <string name="world_export_title">اختر مجلداً لتصدير هذا العالم إليه</string>
     <string name="world_export_location">تصدير إلى</string>
-    <string name="world_export_wizard">تصدير العالم %s</string>
+    <string name="world_export_wizard" formatted="false">تصدير العالم %s</string>
     <string name="world_extension">أرشيف العالم</string>
     <string name="world_game_version">إصدار اللعبة</string>
     <string name="world_import_already_exists">هذا العالم موجود بالفعل.</string>
     <string name="world_import_choose">اختر أرشيف الحفظ المراد استيراده</string>
-    <string name="world_import_failed">تعذر استيراد هذا العالم: %s</string>
+    <string name="world_import_failed" formatted="false">تعذر استيراد هذا العالم: %s</string>
     <string name="world_import_invalid">تعذر تحليل عالم الحفظ.</string>
     <string name="world_locked_failed">هذا العالم مقفل بواسطة اللعبة أو مشغل آخر.</string>
-    <string name="world_info_title">العالم %s - معلومات</string>
+    <string name="world_info_title" formatted="false">العالم %s - معلومات</string>
     <string name="world_info_basic">المعلومات الأساسية</string>
     <string name="world_info_allow_cheats">السماح بالغش (Cheats)</string>
     <string name="world_info_dimension_the_nether">العالم السفلي (Nether)</string>
@@ -1489,7 +1489,7 @@
     <string name="world_info_player_xp_level">مستوى الخبرة (XP)</string>
     <string name="world_info_random_seed">بذرة العالم (Seed)</string>
     <string name="world_info_time">وقت اللعبة</string>
-    <string name="world_info_time_format">%s أيام</string>
+    <string name="world_info_time_format" formatted="false">%s أيام</string>
     <string name="world_manage">العوالم / حزم البيانات</string>
     <string name="world_name">اسم العالم</string>
     <string name="world_name_enter">أدخل اسم العالم</string>
@@ -1525,30 +1525,30 @@
     <string name="vulkan_check_title">فحص Vulkan</string>
     <string name="vulkan_check_running">جاري فحص دعم Vulkan...</string>
     <string name="vulkan_check_failed">فشل فحص Vulkan. قد لا يدعم الجهاز التقنية أو فشل تحميل المشغل.</string>
-    <string name="vulkan_check_support_all">يدعم الجهاز كافة ميزات Vulkan المطلوبة لماين كرافت %s والإصدارات الأحدث.</string>
+    <string name="vulkan_check_support_all" formatted="false">يدعم الجهاز كافة ميزات Vulkan المطلوبة لماين كرافت %s والإصدارات الأحدث.</string>
     <string name="vulkan_check_support_none">لا يلبي الجهاز متطلبات Vulkan لأي إصدار من ماين كرافت.</string>
     <string name="vulkan_check_support_partial">يدعم الجهاز واجهة Vulkan لبعض إصدارات ماين كرافت فقط.</string>
     <string name="vulkan_check_versions">نطاقات الإصدارات</string>
-    <string name="vulkan_check_version_range">ماين كرافت %s:</string>
+    <string name="vulkan_check_version_range" formatted="false">ماين كرافت %s:</string>
     <string name="vulkan_check_profile_support">مدعوم</string>
     <string name="vulkan_check_profile_unsupport">غير مدعوم</string>
-    <string name="vulkan_check_version">إصدار Vulkan: %s</string>
-    <string name="vulkan_check_driver">المشغل: %s</string>
+    <string name="vulkan_check_version" formatted="false">إصدار Vulkan: %s</string>
+    <string name="vulkan_check_driver" formatted="false">المشغل: %s</string>
     <string name="vulkan_check_driver_system">مشغل النظام</string>
     <string name="vulkan_check_extensions">الامتدادات (Extensions)</string>
     <string name="vulkan_check_features">الميزات</string>
-    <string name="vulkan_check_item_name_missing">%s (مفقود)</string>
-    <string name="vulkan_check_dep_required">مطلوب في: %s</string>
-    <string name="vulkan_check_dep_optional">اختياري في: %s</string>
+    <string name="vulkan_check_item_name_missing" formatted="false">%s (مفقود)</string>
+    <string name="vulkan_check_dep_required" formatted="false">مطلوب في: %s</string>
+    <string name="vulkan_check_dep_optional" formatted="false">اختياري في: %s</string>
     <string name="vulkan_check_launch_tip">يأتي هذا الإصدار مع واجهة عرض Vulkan. هل تريد التحقق من دعم جهازك لها الآن؟</string>
-    <string name="vulkan_check_launch_warning">لا يلبي الجهاز بالكامل متطلبات Vulkan لهذا الإصدار. قد لا يعمل معالج Vulkan داخل اللعبة:\n%s</string>
+    <string name="vulkan_check_launch_warning" formatted="false">لا يلبي الجهاز بالكامل متطلبات Vulkan لهذا الإصدار. قد لا يعمل معالج Vulkan داخل اللعبة:\n%s</string>
     <string name="vulkan_check_launch_continue">الإطلاق على هر حال</string>
 
     <string name="mcmod" translatable="false">
         <u>MC百科</u>
     </string>
-    <string name="wiki_game">https://es.minecraft.wiki/w/Special:Search?search=%s</string>
-    <string name="wiki_game_search">Java_Edition_%s</string>
+    <string name="wiki_game" formatted="false">https://es.minecraft.wiki/w/Special:Search?search=%s</string>
+    <string name="wiki_game_search" formatted="false">Java_Edition_%s</string>
     <string name="installed">مثبت</string>
     <string name="message_install_plugin">يمكنك الحصول على الإضافات بالطرق التالية.</string>
     <string name="message_install_java">يمكنك الحصول على Java بالطرق التالية.</string>
@@ -1557,17 +1557,17 @@
     <string name="recommend_version">الإصدار الموصى به</string>
 
     <string name="mod_check_continue">متابعة</string>
-    <string name="mod_check_physics">مود الفيزياء (%s) المستخدم لم يتم تصحيحه (استبدال libPhysXJniBindings_64.so من Linux x86_64 إلى Android arm64)، وسيسبب تعطل اللعبة.</string>
-    <string name="mod_check_mcef">مود MCEF (%s) لا يعمل على أندرويد. يُستخدم عادة كتبعيات لـ WebDisplays.</string>
-    <string name="mod_check_valkyrienskies">مود Valkyrien Skies (%s) لا يعمل بشكل مباشر في وضع اللاعب الفردي. يجب استخدام خادم، وإلا ستتعطل اللعبة.</string>
-    <string name="mod_check_yes_steve_model">مود Yes Steve Model (%s) إصدار 2.2.2+ لا يعمل على أندرويد.</string>
-    <string name="mod_check_imblocker">مود IMBlocker (%s) ليس مخصصاً لأندرويد وسيتسبب في تعطل اللعبة.</string>
-    <string name="mod_check_replay">مكتبة FFmpeg مطلوبة لمود Replay (%s). يبدو أنك لم تثبتها بعد.</string>
-    <string name="mod_check_borderlesswindow">مود BorderlessWindow (%s) ليس مخصصاً لأندرويد وسيؤدي لتعطل اللعبة.</string>
-    <string name="mod_check_axiom">مود Axiom (%s) المستخدم لم يتم تصحيحه، وسيؤدي للتعطل.</string>
-    <string name="mod_check_sodium">معالج GL4ES قد لا يدعم مودات Sodium/Embeddium (%s). يُوصى بتنزيل واستخدام معالج MobileGlues بدلاً من ذلك.</string>
-    <string name="mod_check_flashback">مود Flashback (%s) لا يعمل على أندرويد.</string>
-    <string name="mod_check_ixeris">مود Ixeris (%s) لا يعمل بشكل سليم على FCL.</string>
+    <string name="mod_check_physics" formatted="false">مود الفيزياء (%s) المستخدم لم يتم تصحيحه (استبدال libPhysXJniBindings_64.so من Linux x86_64 إلى Android arm64)، وسيسبب تعطل اللعبة.</string>
+    <string name="mod_check_mcef" formatted="false">مود MCEF (%s) لا يعمل على أندرويد. يُستخدم عادة كتبعيات لـ WebDisplays.</string>
+    <string name="mod_check_valkyrienskies" formatted="false">مود Valkyrien Skies (%s) لا يعمل بشكل مباشر في وضع اللاعب الفردي. يجب استخدام خادم، وإلا ستتعطل اللعبة.</string>
+    <string name="mod_check_yes_steve_model" formatted="false">مود Yes Steve Model (%s) إصدار 2.2.2+ لا يعمل على أندرويد.</string>
+    <string name="mod_check_imblocker" formatted="false">مود IMBlocker (%s) ليس مخصصاً لأندرويد وسيتسبب في تعطل اللعبة.</string>
+    <string name="mod_check_replay" formatted="false">مكتبة FFmpeg مطلوبة لمود Replay (%s). يبدو أنك لم تثبتها بعد.</string>
+    <string name="mod_check_borderlesswindow" formatted="false">مود BorderlessWindow (%s) ليس مخصصاً لأندرويد وسيؤدي لتعطل اللعبة.</string>
+    <string name="mod_check_axiom" formatted="false">مود Axiom (%s) المستخدم لم يتم تصحيحه، وسيؤدي للتعطل.</string>
+    <string name="mod_check_sodium" formatted="false">معالج GL4ES قد لا يدعم مودات Sodium/Embeddium (%s). يُوصى بتنزيل واستخدام معالج MobileGlues بدلاً من ذلك.</string>
+    <string name="mod_check_flashback" formatted="false">مود Flashback (%s) لا يعمل على أندرويد.</string>
+    <string name="mod_check_ixeris" formatted="false">مود Ixeris (%s) لا يعمل بشكل سليم على FCL.</string>
 
     <string name="internal">داخلي</string>
     <string name="import_java">استيراد Java</string>
@@ -1578,7 +1578,7 @@
 
     <string name="ingame_folder_browse">استعراض المجلد</string>
     <string name="ingame_folder_import">استيراد</string>
-    <string name="ingame_folder_import_failed">حدث خطأ أثناء استيراد الملف %1$s!\n%2$s</string>
+    <string name="ingame_folder_import_failed" formatted="false">حدث خطأ أثناء استيراد الملف %1$s!\n%2$s</string>
 
     <string name="manage_version">إدارة الإصدارات</string>
     <string name="select_renderer">اختر المعالج الرسومي</string>
@@ -1592,11 +1592,11 @@
     <string name="supported_mc_version">إصدارات ماين كرافت المدعومة:</string>
     <string name="renderer_source">المصدر:</string>
     <string name="renderer_source_builtin">مدمج</string>
-    <string name="message_check_renderer">المعالج الرسومي الحالي %s لا يدعم إصدار اللعبة هذا. الاستمرار قد يسبب أخطاء رسومية أو تعطل اللعبة! هل تريد المتابعة؟</string>
-    <string name="message_check_plugin">الإضافة الحالية %s لا تدعم إصدار اللعبة هذا. الاستمرار قد يتسبب في تعطل اللعبة! هل تريد المتابعة؟</string>
+    <string name="message_check_renderer" formatted="false">المعالج الرسومي الحالي %s لا يدعم إصدار اللعبة هذا. الاستمرار قد يسبب أخطاء رسومية أو تعطل اللعبة! هل تريد المتابعة؟</string>
+    <string name="message_check_plugin" formatted="false">الإضافة الحالية %s لا تدعم إصدار اللعبة هذا. الاستمرار قد يتسبب في تعطل اللعبة! هل تريد المتابعة؟</string>
     <string name="enabled">مفعل</string>
     <string name="disabled">معطل</string>
-    <string name="message_check_path_valid">مسار ملف اللعبة المختار حالياً (%s) قد يحتوي على أحرف غير قانونية قد تعطل اللعبة. يوصى بالتحقق من المسار أو إعادة تسمية النسخة.</string>
+    <string name="message_check_path_valid" formatted="false">مسار ملف اللعبة المختار حالياً (%s) قد يحتوي على أحرف غير قانونية قد تعطل اللعبة. يوصى بالتحقق من المسار أو إعادة تسمية النسخة.</string>
     <string name="message_check_has_modloader">تم اكتشاف مودات مثبتة في هذه النسخة، ولكن يبدو أن مدير المودات الموافق غير مثبت. قد لا تعمل المودات بشكل سليم.</string>
     <string name="message_data_is_loading">البيانات لا تزال قيد التحميل ولا يمكن تعديلها.</string>
     <string name="exception_no_suitable_java">فشل العثور على بيئة Java مناسبة!</string>
@@ -1674,7 +1674,7 @@
     <string name="log_upload_copy">نسخ الرابط</string>
     <string name="log_upload_open">فتح الرابط</string>
     <string name="log_upload_share">مشاركة الرابط</string>
-    <string name="log_upload_share_template">واجهت مشكلة في المشغل، إليك رابط السجل:\n%s</string>
+    <string name="log_upload_share_template" formatted="false">واجهت مشكلة في المشغل، إليك رابط السجل:\n%s</string>
     <string name="close">إغلاق</string>
     <string name="create_account_first">يرجى إنشاء حساب لعبة قبل الإطلاق</string>
     <string name="version_list_refreshing">جاري جلب قائمة الإصدارات البعيدة…</string>
@@ -1692,7 +1692,7 @@
     <string name="animation_hands_up_jumping">قفز الأيدي مرفوعة</string>
     <string name="animation_spin_jump">قفزة دورانية</string>
     <string name="quark_promo_title">ادعم FXL</string>
-    <string name="quark_promo_message">هذا هو إطلاقك رقم %1$d للعبة!\n\nإذا كان المشغل مفيداً لك، فلا بأس بأخذ لحظة لدعمنا، شكراً جزيلاً لك!</string>
+    <string name="quark_promo_message" formatted="false">هذا هو إطلاقك رقم %1$d للعبة!\n\nإذا كان المشغل مفيداً لك، فلا بأس بأخذ لحظة لدعمنا، شكراً جزيلاً لك!</string>
     <string name="quark_promo_open">فتح Quark Drive</string>
     <string name="quark_promo_start">بدء اللعبة</string>
 </resources>
