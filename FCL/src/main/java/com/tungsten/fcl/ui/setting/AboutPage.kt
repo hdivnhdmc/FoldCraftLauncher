@@ -184,15 +184,15 @@ class AboutPage(context: Context?, id: Int) : FCLPage(context, id, R.layout.page
     companion object {
         private const val TYPE_DESC = 0
         private const val TYPE_LINK = 1
-        private const val QQ_GROUP_KEY = "9_Mnxe5x1l6L7giLuRYQyBh0iWBgCUbw"
+        private const val QQ_GROUP_KEY = "قريبا"
 
         private val LINKS = listOf(
-            LinkItem(R.string.about_launcher, "https://fcl-team.github.io/"),
-            LinkItem(R.string.about_developer, "https://github.com/FCL-Team"),
-            LinkItem(R.string.community_discord, "https://discord.gg/ffhvuXTwyV"),
+            LinkItem(R.string.about_launcher, "قريبا"),
+            LinkItem(R.string.about_developer, "قريبا"),
+            LinkItem(R.string.community_discord, "https://discord.gg/rbWAZSjqYy"),
             LinkItem(R.string.community_qq, null),
-            LinkItem(R.string.about_sponsor, "https://afdian.com/@tungs"),
-            LinkItem(R.string.about_source, "https://github.com/FCL-Team/FoldCraftLauncher"),
+            LinkItem(R.string.about_sponsor, "قريبا"),
+            LinkItem(R.string.about_source, "قريبا"),
             LinkItem(R.string.legal_eula, null, LegalAgreement.Document.EULA),
             LinkItem(R.string.legal_privacy, null, LegalAgreement.Document.PRIVACY_POLICY)
         )
