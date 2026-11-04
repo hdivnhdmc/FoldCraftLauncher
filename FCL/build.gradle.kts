@@ -157,7 +157,7 @@ android {
         }
     }
 
-    // تعطيل شامل لجميع أخطاء ملفات النصوص والترجمات لتوليد كلاس الـ R إجبارياً
+    // تعطيل شامل لجميع أخطاء فحص النصوص لتجاوز أي مشاكل في strings.xml
     lint {
         checkReleaseBuilds = false
         abortOnError = false
@@ -174,6 +174,12 @@ android {
             "ValidActions",
             "ResourceType"
         ))
+    }
+
+    sourceSets {
+        getByName("main") {
+            res.srcDirs("src/main/res")
+        }
     }
 }
 
