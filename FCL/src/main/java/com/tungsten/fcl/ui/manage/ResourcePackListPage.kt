@@ -29,7 +29,7 @@ import java.util.Locale
 class ResourcePackListPage(context: Context?, id: Int) :
     FCLPage(context, id, R.layout.page_manage_resource_pack), VersionLoadable, View.OnClickListener {
 
-    private val binding: PageManageResourcePackBinding = PageManageResourcePackBinding.bind(contentView)
+    private val binding: PageManageResourcePackBinding = PageManageResourcePackBinding.bind(contentView.getRoot())
     private val adapter: ResourcePackListAdapter
 
     private var profile: Profile? = null
