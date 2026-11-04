@@ -7,8 +7,6 @@
     android:paddingTop="10dp"
     android:paddingEnd="10dp">
 
-    <!-- 左侧筛选面板：与搜索页的搜索面板同构（类别下拉 + 沉底操作按钮） -->
-
     <ScrollView
         android:id="@+id/filter_panel"
         android:layout_width="0dp"
@@ -19,7 +17,6 @@
         app:layout_constraintBottom_toTopOf="@id/btn_download_all"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintWidth_percent="0.3">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -35,7 +32,6 @@
                 android:text="@string/mods_category"
                 app:auto_text_tint="true" />
 
-            <!-- 直接展开的类别选项（选中项主题色高亮），左侧面板较大无需下拉 -->
             <LinearLayout
                 android:id="@+id/filter_options"
                 android:layout_width="match_parent"
@@ -43,7 +39,6 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical" />
 
-            <!-- 分组区头：标题 + 管理分组入口（扳手图标） -->
             <com.tungsten.fcllibrary.component.view.FCLLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +64,6 @@
 
             </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
 
-            <!-- 分组筛选选项 + 管理分组入口（行随分组增删改动态重建） -->
             <LinearLayout
                 android:id="@+id/group_options"
                 android:layout_width="match_parent"
@@ -93,7 +87,6 @@
         app:layout_constraintWidth_percent="0.3"
         app:ripple="true" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"
@@ -104,7 +97,6 @@
         app:layout_constraintStart_toEndOf="@id/filter_panel"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 空状态：展示收藏功能的使用方法 -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/empty_view"
         android:layout_width="wrap_content"
@@ -155,7 +147,6 @@
         app:layout_constraintStart_toEndOf="@id/filter_panel"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 多选模式操作栏（多选时横跨全宽，替代一键下载按钮）；两行排布，窄屏下整栏仍完整可见 -->
     <com.tungsten.fcllibrary.component.view.FCLLinearLayout
         android:id="@+id/multi_select_bar"
         android:layout_width="0dp"
