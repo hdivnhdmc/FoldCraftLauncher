@@ -1,4 +1,4 @@
-import com.android.build.api.variant.FilterConfiguration.FilterType.ABI
+Import com.android.build.api.variant.FilterConfiguration.FilterType.ABI
 import com.android.build.gradle.tasks.MergeSourceSetFolders
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.text.SimpleDateFormat
@@ -22,7 +22,7 @@ checkstyle {
 // AGP 不提供 Java 插件的 SourceSetContainer，checkstyle 插件不会自动创建任务，
 // 因此手动注册 checkstyle 任务，检查范围为主源码目录的 Java 文件
 tasks.register<Checkstyle>("checkstyle") {
-    description = "Run checkstyle on the FCL Java sources."
+    description = "Run checkstyle on the FXL Java sources."
     group = "verification"
     source(layout.projectDirectory.dir("src/main/java"))
     include("**/*.java")
@@ -32,7 +32,7 @@ tasks.register<Checkstyle>("checkstyle") {
 }
 
 android {
-    namespace = "com.tungsten.fcl"
+    namespace = "com.tungsten.fxl"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     var localProperty: Properties? = null
@@ -55,14 +55,14 @@ android {
         create("FCLKey") {
             storeFile = file("../key-store.jks")
             storePassword = pwd
-            keyAlias = "FCL-Key"
+            keyAlias = "FXL-Key"
             keyPassword = pwd
         }
         create("FCLDebugKey") {
             storeFile = file("../debug-key.jks")
-            storePassword = "FCL-Debug"
-            keyAlias = "FCL-Debug"
-            keyPassword = "FCL-Debug"
+            storePassword = "FXL-Debug"
+            keyAlias = "FXL-Debug"
+            keyPassword = "FXL-Debug"
         }
         // minSdk 26 ≥ 24，v1 已无必要，统一启用 v2 + v3 签名方案
         configureEach {
@@ -73,7 +73,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.tungsten.fcl"
+        applicationId = "com.tungsten.fxl"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1344
@@ -101,8 +101,8 @@ android {
             initWith(getByName("debug"))
             applicationIdSuffix = ".debug"
             signingConfig = signingConfigs.getByName("FCLDebugKey")
-            // 与 FileProvider authority（${applicationId}.provider）保持一致（原 FCLLibrary 模块的 resValue）
-            resValue("string", "file_browser_provider", "com.tungsten.fcl.debug.provider")
+            // 与 FileProvider authority（${applicationId}.provider）保持一致
+            resValue("string", "file_browser_provider", "com.tungsten.fxl.debug.provider")
         }
         configureEach {
             resValue("string", "app_version", defaultConfig.versionName.toString())
@@ -111,12 +111,9 @@ android {
         }
     }
 
-
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-        // core library desugaring：java.time / java.util.stream / Optional 等脱糖到 minSdk 26 可用
         isCoreLibraryDesugaringEnabled = true
     }
 
@@ -159,10 +156,6 @@ android {
     }
 }
 
-/**
- * 按 -Darch 过滤 JRE 压缩包，生成当前架构需要的资产目录。
- * 非 all 构建只保留 version、universal 和 bin-<arch>.tar.xz（运行时两者都需要，见 RuntimeUtils#installJava）。
- */
 abstract class FilterJreAssets : Sync() {
     @get:OutputDirectory
     abstract val outputDir: DirectoryProperty
@@ -170,8 +163,6 @@ abstract class FilterJreAssets : Sync() {
 
 val filterJreAssets = tasks.register<FilterJreAssets>("filterJreAssets") {
     val arch = System.getProperty("arch", "all")
-    // Copy/Sync 的 up-to-date 检查不包含 copy spec 的过滤规则，必须显式声明 arch 输入，
-    // 否则切换架构时任务不会重跑，产物会残留上一架构的 JRE 包
     inputs.property("arch", arch)
     from(layout.projectDirectory.dir("src/main/jreAssets"))
     into(outputDir)
@@ -186,28 +177,22 @@ androidComponents {
             if (output is com.android.build.api.variant.impl.VariantOutputImpl) {
                 (output.getFilter(ABI)?.identifier ?: "all").let { abi ->
                     output.outputFileName =
-                        "FCL-${variant.buildType}-${project.android.defaultConfig.versionName}-${abi}.apk"
+                        "FXL-${variant.buildType}-${project.android.defaultConfig.versionName}-${abi}.apk"
                 }
             }
         }
 
-        // JRE 资产不放在 src/main/assets 里（AGP 的 mergeAssets 不应用 source set 的 exclude 过滤），
-        // 而是按架构注册为生成源；arch 变化会让 Sync 任务重新执行，mergeAssets 随之重跑，避免产物残留旧架构文件。
         if (System.getProperty("arch", "all") != "all") {
             variant.sources.assets?.addGeneratedSourceDirectory(filterJreAssets) { it.outputDir }
         } else {
             variant.sources.assets?.addStaticSourceDirectory("src/main/jreAssets")
         }
 
-        // LWJGL natives 打包在 lwjgl-*-natives aar 的 assets/app_runtime/lwjgl/<版本>/natives/<abi> 下，
-        // JNA natives 在 assets/app_runtime/jna/<版本>/natives/<abi> 下，
-        // 均不走 AGP 的 abiFilters，需在 mergeAssets 后手动按架构删除其他 ABI 的 natives 目录。
         val variantName = variant.name.replaceFirstChar { it.uppercaseChar() }
         afterEvaluate {
             val mergeAssets =
                 tasks.named("merge${variantName}Assets", MergeSourceSetFolders::class.java)
             val arch = System.getProperty("arch", "all")
-            // 显式声明 arch 输入，arch 变化时任务重跑，避免产物残留上一架构的 natives
             mergeAssets.configure { inputs.property("lwjglArch", arch) }
             mergeAssets.configure {
                 doLast {
@@ -220,7 +205,6 @@ androidComponents {
                         else -> return@doLast
                     }
                     val assetsDir = outputDir.get().asFile
-                    // 版本列表从 libs 下的 lwjgl-*-natives-release.aar 文件名推导，避免新增版本时忘记同步
                     val lwjglVersions = project.file("libs").listFiles { f ->
                         f.name.matches(Regex("lwjgl-\\d+\\.\\d+\\.\\d+-natives-release\\.aar"))
                     }
@@ -237,7 +221,6 @@ androidComponents {
                             }
                         }
                     }
-                    // JNA natives 在 assets/app_runtime/jna/<版本>/natives/<abi> 下，同样按架构裁剪
                     File(assetsDir, "app_runtime/jna").listFiles()?.forEach { versionDir ->
                         val nativesDir = File(versionDir, "natives")
                         if (nativesDir.isDirectory) {
@@ -261,7 +244,6 @@ kotlin {
     }
 }
 
-// Room schema 导出（收藏库用，为将来迁移留底）
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
 }
@@ -295,7 +277,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.recyclerview)
-    implementation(libs.coroutines.android)
+    implementation, libs.coroutines.android
     implementation(libs.glide)
     implementation(libs.touchcontroller)
     implementation(libs.palette.ktx)
