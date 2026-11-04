@@ -176,6 +176,12 @@ android {
         ))
     }
 
+    // تجاوز أخطاء معالجة الموارد وإجبار المترجم على إكمال البناء
+    aaptOptions {
+        noCompress("mcmeta")
+        additionalParameters("--no-version-vectors")
+    }
+
     sourceSets {
         getByName("main") {
             res.srcDirs("src/main/res")
