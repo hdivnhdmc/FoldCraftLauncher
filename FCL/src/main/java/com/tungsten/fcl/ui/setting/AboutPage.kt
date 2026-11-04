@@ -139,12 +139,12 @@ class AboutPage(context: Context?, id: Int) : FCLPage(context, id, R.layout.page
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
             val inflater = LayoutInflater.from(parent.context)
-            val item = if (viewType == TYPE_DESC) {
-                ItemAboutDescBinding.inflate(inflater, parent, false).root
+            val itemView: View = if (viewType == TYPE_DESC) {
+                ItemAboutDescBinding.inflate(inflater, parent, false).getRoot()
             } else {
-                ItemAboutBinding.inflate(inflater, parent, false).root
+                ItemAboutBinding.inflate(inflater, parent, false).getRoot()
             }
-            return Holder(item)
+            return Holder(itemView)
         }
 
         override fun onBindViewHolder(holder: Holder, position: Int) {
