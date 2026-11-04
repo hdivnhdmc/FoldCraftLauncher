@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">FXL Craft Launcher</string>
+    <string name="app_name" translatable="false">FXL Launcher</string>
     <string name="app_name_import">تثبيت حزمة مودات</string>
 
     <string name="splash_agreement">يحتاج مشغل FXL إلى إذن التخزين لإدارة وقراءة ملفات اللعبة. المشغل مفتوح المصدر بالكامل على GitHub، لذا يمكنك الاطمئنان تماماً على أمان بياناتك. هذا الإذن مطلوب فقط لضمان عمل اللعبة بشكل سليم ولا يشكل أي خطورة أمنية.</string>
@@ -12,7 +12,7 @@
     <string name="splash_permission_settings_msg">لقد اخترت "عدم السماح أبداً"، يرجى منح صلاحية التخزين يدوياً من الإعدادات.</string>
     <string name="notification_permission">يحتاج المشغل إلى إذن لعرض الإشعارات لتجنب أي مشاكل أثناء تثبيت أو تشغيل اللعبة.</string>
 
-    <string name="splash_title">أهلاً بك في FXL Craft Launcher</string>
+    <string name="splash_title">أهلاً بك في FXL Launcher</string>
     <string name="splash_eula_error">تعذر جلب اتفاقية الاستخدام (EULA)، يرجى التحقق من اتصال الإنترنت.</string>
     <string name="splash_eula_next">موافق ومتابعة</string>
     <string name="splash_runtime_title">تثبيت أو تحديث بيئة تشغيل التطبيق</string>
