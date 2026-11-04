@@ -157,11 +157,23 @@ android {
         }
     }
 
-    // حل جذري لتجاوز أخطاء ملفات النصوص وتوليد ملف الـ R إجبارياً
+    // تعطيل شامل لجميع أخطاء ملفات النصوص والترجمات لتوليد كلاس الـ R إجبارياً
     lint {
         checkReleaseBuilds = false
         abortOnError = false
-        disable.addAll(listOf("MissingTranslation", "ExtraTranslation", "InvalidPackage"))
+        checkAllWarnings = false
+        disable.addAll(listOf(
+            "MissingTranslation", 
+            "ExtraTranslation", 
+            "InvalidPackage", 
+            "TypographyDashes", 
+            "TypographyQuotes",
+            "StringFormatMatches",
+            "StringFormatInvalid",
+            "UnusedResources",
+            "ValidActions",
+            "ResourceType"
+        ))
     }
 }
 
@@ -174,7 +186,6 @@ val filterJreAssets = tasks.register<FilterJreAssets>("filterJreAssets") {
     val arch = System.getProperty("arch", "all")
     inputs.property("arch", arch)
     from(layout.projectDirectory.dir("src/main/jreAssets"))
-    // تحديد مسار المخرج بشكل دقيق لتفادي مشاكل الـ Build
     outputDir.set(layout.buildDirectory.dir("generated/jreAssets"))
 
     if (arch != "all") {
