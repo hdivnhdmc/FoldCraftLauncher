@@ -1,16 +1,43 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.android.library) // أو application حسب نوع الموديول لديك
+    alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") // إضافة تفعيل الـ Serialization هنا
 }
 
-// AGP 8.13 捆绑的 D8/R8 8.13.19 只支持到 Kotlin 2.3，
-// Kotlin 2.4 产物需 R8 9.1.29+（https://developer.android.com/studio/build/kotlin-d8-r8-versions），
-// 通过 buildscript classpath 覆盖捆绑版本
-buildscript {
-    dependencies {
-        classpath("com.android.tools:r8:9.4.17")
+android {
+    namespace = "com.tungsten.fcl" // أو مساحة الأسماء الخاصة بمشروعك
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+        targetSdk = 34
+        
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    // مكتبات الـ Serialization والـ DataStore اللازمة لعمل ThemePreference.kt
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("androidx.datastore:datastore-preferences:1.1.0")
+    
+    // باقي الاعتماديات الخاصة بالمشروع...
 }
