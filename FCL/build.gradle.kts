@@ -29,25 +29,31 @@ tasks.register<Checkstyle>("checkstyle") {
 }
 
 android {
-    namespace = "com.tungsten.fxl"
+    namespace = "com.tungsten.fcl"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     var localProperty: Properties? = null
     if (file("${rootDir}/local.properties").exists()) {
         localProperty = Properties()
-        file("${rootDir}/local.properties").inputStream().use { localProperty.load(it) }
+        file("${rootDir}/local.properties").inputStream().use {
+            localProperty.load(it)
+        }
     }
 
-    val pwd = System.getenv("FCL_KEYSTORE_PASSWORD") ?: localProperty?.getProperty("pwd")
-    val curseApiKey = System.getenv("CURSE_API_KEY") ?: localProperty?.getProperty("curse.api.key")
-    val oauthApiKey = System.getenv("OAUTH_API_KEY") ?: localProperty?.getProperty("oauth.api.key")
+    val pwd = System.getenv("FCL_KEYSTORE_PASSWORD")
+        ?: localProperty?.getProperty("pwd")
+    val curseApiKey = System.getenv("CURSE_API_KEY")
+        ?: localProperty?.getProperty("curse.api.key")
+    val oauthApiKey = System.getenv("OAUTH_API_KEY")
+        ?: localProperty?.getProperty("oauth.api.key")
 
-    if (System.getProperty("arch") == null && localProperty != null && localProperty.getProperty(
-            "arch",
-            "all"
-        ) == "arm64"
-    )
+    if (
+        System.getProperty("arch") == null &&
+        localProperty != null &&
+        localProperty.getProperty("arch", "all") == "arm64"
+    ) {
         System.setProperty("arch", "arm64")
+    }
 
     signingConfigs {
         create("FCLKey") {
@@ -103,11 +109,19 @@ android {
             initWith(getByName("debug"))
             applicationIdSuffix = ".debug"
             signingConfig = signingConfigs.getByName("FCLDebugKey")
-            resValue("string", "file_browser_provider", "com.tungsten.fxl.debug.provider")
+            resValue(
+                "string",
+                "file_browser_provider",
+                "com.tungsten.fxl.debug.provider"
+            )
         }
 
         configureEach {
-            resValue("string", "app_version", defaultConfig.versionName.toString())
+            resValue(
+                "string",
+                "app_version",
+                defaultConfig.versionName.toString()
+            )
             resValue("string", "curse_api_key", curseApiKey.toString())
             resValue("string", "oauth_api_key", oauthApiKey.toString())
         }
@@ -157,26 +171,26 @@ android {
         }
     }
 
-    // تعطيل شامل لجميع أخطاء فحص النصوص لتجاوز أي مشاكل في strings.xml
     lint {
         checkReleaseBuilds = false
         abortOnError = false
         checkAllWarnings = false
-        disable.addAll(listOf(
-            "MissingTranslation", 
-            "ExtraTranslation", 
-            "InvalidPackage", 
-            "TypographyDashes", 
-            "TypographyQuotes",
-            "StringFormatMatches",
-            "StringFormatInvalid",
-            "UnusedResources",
-            "ValidActions",
-            "ResourceType"
-        ))
+        disable.addAll(
+            listOf(
+                "MissingTranslation",
+                "ExtraTranslation",
+                "InvalidPackage",
+                "TypographyDashes",
+                "TypographyQuotes",
+                "StringFormatMatches",
+                "StringFormatInvalid",
+                "UnusedResources",
+                "ValidActions",
+                "ResourceType"
+            )
+        )
     }
 
-    // تجاوز أخطاء معالجة الموارد وإجبار المترجم على إكمال البناء
     aaptOptions {
         noCompress("mcmeta")
         additionalParameters("--no-version-vectors")
@@ -201,7 +215,10 @@ val filterJreAssets = tasks.register<FilterJreAssets>("filterJreAssets") {
     outputDir.set(layout.buildDirectory.dir("generated/jreAssets"))
 
     if (arch != "all") {
-        exclude { it.name.startsWith("bin-") && it.name != "bin-$arch.tar.xz" }
+        exclude {
+            it.name.startsWith("bin-") &&
+                it.name != "bin-$arch.tar.xz"
+        }
     }
 }
 
@@ -217,19 +234,29 @@ androidComponents {
         }
 
         if (System.getProperty("arch", "all") != "all") {
-            variant.sources.assets?.addGeneratedSourceDirectory(filterJreAssets) { it.outputDir }
+            variant.sources.assets?.addGeneratedSourceDirectory(
+                filterJreAssets
+            ) { it.outputDir }
         } else {
-            variant.sources.assets?.addStaticSourceDirectory("src/main/jreAssets")
+            variant.sources.assets?.addStaticSourceDirectory(
+                "src/main/jreAssets"
+            )
         }
 
-        val variantName = variant.name.replaceFirstChar { it.uppercaseChar() }
+        val variantName = variant.name.replaceFirstChar {
+            it.uppercaseChar()
+        }
 
         afterEvaluate {
-            val mergeAssets =
-                tasks.named("merge${variantName}Assets", MergeSourceSetFolders::class.java)
+            val mergeAssets = tasks.named(
+                "merge${variantName}Assets",
+                MergeSourceSetFolders::class.java
+            )
 
             val arch = System.getProperty("arch", "all")
-            mergeAssets.configure { inputs.property("lwjglArch", arch) }
+            mergeAssets.configure {
+                inputs.property("lwjglArch", arch)
+            }
 
             mergeAssets.configure {
                 doLast {
@@ -245,40 +272,60 @@ androidComponents {
 
                     val assetsDir = outputDir.get().asFile
 
-                    val lwjglVersions = project.file("libs").listFiles { f ->
-                        f.name.matches(Regex("lwjgl-\\d+\\.\\d+\\.\\d+-natives-release\\.aar"))
-                    }
+                    val lwjglVersions = project.file("libs")
+                        .listFiles { f ->
+                            f.name.matches(
+                                Regex(
+                                    "lwjgl-\\d+\\.\\d+\\.\\d+-natives-release\\.aar"
+                                )
+                            )
+                        }
                         ?.map {
-                            Regex("lwjgl-(\\d+\\.\\d+\\.\\d+)-natives-release\\.aar")
-                                .find(it.name)!!.groupValues[1]
+                            Regex(
+                                "lwjgl-(\\d+\\.\\d+\\.\\d+)-natives-release\\.aar"
+                            ).find(it.name)!!.groupValues[1]
                         }
                         ?: emptyList()
 
                     lwjglVersions.forEach { version ->
-                        val nativesDir = File(assetsDir, "app_runtime/lwjgl/$version/natives")
+                        val nativesDir = File(
+                            assetsDir,
+                            "app_runtime/lwjgl/$version/natives"
+                        )
 
                         if (nativesDir.isDirectory) {
                             nativesDir.listFiles()?.forEach { dir ->
                                 if (dir.isDirectory && dir.name != abi) {
-                                    logger.lifecycle("删除非目标架构 natives: $dir")
+                                    logger.lifecycle(
+                                        "删除非目标架构 natives: $dir"
+                                    )
                                     dir.deleteRecursively()
                                 }
                             }
                         }
                     }
 
-                    File(assetsDir, "app_runtime/jna").listFiles()?.forEach { versionDir ->
-                        val nativesDir = File(versionDir, "natives")
+                    File(assetsDir, "app_runtime/jna")
+                        .listFiles()?.forEach { versionDir ->
+                            val nativesDir = File(
+                                versionDir,
+                                "natives"
+                            )
 
-                        if (nativesDir.isDirectory) {
-                            nativesDir.listFiles()?.forEach { dir ->
-                                if (dir.isDirectory && dir.name != abi) {
-                                    logger.lifecycle("删除非目标架构 natives: $dir")
-                                    dir.deleteRecursively()
+                            if (nativesDir.isDirectory) {
+                                nativesDir.listFiles()?.forEach { dir ->
+                                    if (
+                                        dir.isDirectory &&
+                                        dir.name != abi
+                                    ) {
+                                        logger.lifecycle(
+                                            "删除非目标架构 natives: $dir"
+                                        )
+                                        dir.deleteRecursively()
+                                    }
                                 }
                             }
                         }
-                    }
                 }
             }
         }
@@ -297,7 +344,14 @@ ksp {
 
 dependencies {
     coreLibraryDesugaring(libs.desugar.jdk.libs)
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
+    implementation(
+        fileTree(
+            mapOf(
+                "dir" to "libs",
+                "include" to listOf("*.jar", "*.aar")
+            )
+        )
+    )
     implementation(project(":ZipFileSystem"))
     implementation(project(":Terracotta"))
     implementation(libs.commons.io)
@@ -367,6 +421,9 @@ tasks.register("updateMap") {
             )
         }
 
-        mapFile.writeText(list.joinToString("\n"), Charsets.UTF_8)
+        mapFile.writeText(
+            list.joinToString("\n"),
+            Charsets.UTF_8
+        )
     }
 }
