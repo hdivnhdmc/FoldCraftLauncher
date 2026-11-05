@@ -225,12 +225,10 @@ val filterJreAssets = tasks.register<FilterJreAssets>("filterJreAssets") {
 androidComponents {
     onVariants { variant ->
         variant.outputs.forEach { output ->
-            if (output is com.android.build.api.variant.impl.VariantOutputImpl) {
-                (output.getFilter(ABI)?.identifier ?: "all").let { abi ->
-                    output.outputFileName =
-                        "FXL-${variant.buildType}-${project.android.defaultConfig.versionName}-${abi}.apk"
-                }
-            }
+            val abi = output.filters.find { it.filterType == ABI }?.identifier ?: "all"
+            output.outputFileName.set(
+                "FXL-${variant.buildType}-${project.android.defaultConfig.versionName}-${abi}.apk"
+            )
         }
 
         if (System.getProperty("arch", "all") != "all") {
