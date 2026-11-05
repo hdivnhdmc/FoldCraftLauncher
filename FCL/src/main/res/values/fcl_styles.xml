@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- أضف هذا الثيم هنا لكي ينتهي خطأ الـ Manifest -->
+    <!-- الثيم الرئيسي لتجنب خطأ الـ Manifest -->
     <style name="Theme.FoldCraftLauncher" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#2B2D42</item>
         <item name="colorPrimaryVariant">#1A1A24</item>
         <item name="colorOnPrimary">#FFFFFF</item>
     </style>
-
-    <!-- الأنماط الموجودة مسبقاً لديك -->
+    <!-- الأنماط الموجودة مسبقاً مع إضافة بادئة android الصحيحة -->
     <style name="FCLSpinnerPopupAnimation">
-        <item name="windowEnterAnimation">@anim/fcl_spinner_popup_enter</item>
-        <item name="windowExitAnimation">@anim/fcl_spinner_popup_exit</item>
+        <item name="android:windowEnterAnimation">@anim/fcl_spinner_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/fcl_spinner_popup_exit</item>
     </style>
 </resources>
