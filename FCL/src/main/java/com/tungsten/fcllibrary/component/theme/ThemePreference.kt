@@ -13,7 +13,6 @@ import java.io.InputStream
 import java.io.OutputStream
 
 /** 主题持久化数据（DataStore，替代原 SharedPreferences("theme")） */
-@OptIn(kotlinx.serialization.InternalSerializationApi::class)
 @Serializable
 data class ThemePreference(
     val color: Int = 0xFF7797CF.toInt(),
@@ -33,19 +32,26 @@ val Context.themeDataStore: DataStore<ThemePreference> by dataStore(
 )
 
 object ThemePreferenceSerializer : Serializer<ThemePreference> {
+    private val json = Json {
+        ignoreUnknownKeys = true
+        encodeDefaults = true
+    }
+
     override val defaultValue: ThemePreference = ThemePreference()
 
     override suspend fun readFrom(input: InputStream): ThemePreference {
         return try {
-            Json.decodeFromString<ThemePreference>(input.readBytes().decodeToString())
+            json.decodeFromString<ThemePreference>(input.readBytes().decodeToString())
         } catch (_: SerializationException) {
+            defaultValue
+        } catch (_: Exception) {
             defaultValue
         }
     }
 
     override suspend fun writeTo(t: ThemePreference, output: OutputStream) {
         withContext(Dispatchers.IO) {
-            output.write(Json.encodeToString(t).encodeToByteArray())
+            output.write(json.encodeToString(ThemePreference.serializer(), t).encodeToByteArray())
         }
     }
 }
